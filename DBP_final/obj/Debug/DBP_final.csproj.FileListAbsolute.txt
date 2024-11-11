@@ -1,0 +1,17 @@
+C:\Users\user\Desktop\DBP_final\DBP_final\bin\Debug\DBP_final.exe.config
+C:\Users\user\Desktop\DBP_final\DBP_final\bin\Debug\DBP_final.exe
+C:\Users\user\Desktop\DBP_final\DBP_final\bin\Debug\DBP_final.pdb
+C:\Users\user\Desktop\DBP_final\DBP_final\obj\Debug\DBP_final.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\DBP_final\DBP_final\obj\Debug\DBP_final.Form1.resources
+C:\Users\user\Desktop\DBP_final\DBP_final\obj\Debug\DBP_final.Properties.Resources.resources
+C:\Users\user\Desktop\DBP_final\DBP_final\obj\Debug\DBP_final.csproj.GenerateResource.cache
+C:\Users\user\Desktop\DBP_final\DBP_final\obj\Debug\DBP_final.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\DBP_final\DBP_final\obj\Debug\DBP_final.exe
+C:\Users\user\Desktop\DBP_final\DBP_final\obj\Debug\DBP_final.pdb
+C:\Users\user\Desktop\DBP_final\DBP_final\bin\Debug\MetroFramework.Design.dll
+C:\Users\user\Desktop\DBP_final\DBP_final\bin\Debug\MetroFramework.dll
+C:\Users\user\Desktop\DBP_final\DBP_final\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\user\Desktop\DBP_final\DBP_final\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+C:\Users\user\Desktop\DBP_final\DBP_final\obj\Debug\DBP_final.csproj.Up2Date
+C:\Users\user\Desktop\DBP_final\DBP_final\bin\Debug\FirstFloor.ModernUI.dll
+C:\Users\user\Desktop\DBP_final\DBP_final\bin\Debug\FirstFloor.ModernUI.xml
