@@ -33,8 +33,10 @@ namespace DBP_final
 
             oracleCommand1.CommandText = oracleConnection1.ConnectionString;
             oracleCommand1.Connection = oracleConnection1;
-            //textBox2.PasswordChar = '*';
+          
         }
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {

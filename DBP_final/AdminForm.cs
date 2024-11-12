@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,7 @@ namespace DBP_final
 
         private IconButton currentBtn;
         private Panel leftBorderBtn;
+        private Form currentChildForm;
 
         public AdminForm()
         {
@@ -26,6 +28,11 @@ namespace DBP_final
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             panel1.Controls.Add(leftBorderBtn);
+
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MaximizedBounds=Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         private struct RGBcolors
@@ -44,7 +51,7 @@ namespace DBP_final
             {
                 DisableButton();
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
+                currentBtn.BackColor = Color.FromArgb(92, 68, 136);
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
@@ -56,6 +63,10 @@ namespace DBP_final
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
 
+                iconCurrentChildForm.IconChar = currentBtn.IconChar;
+                iconCurrentChildForm.IconColor = color; 
+
+
             }
         }
 
@@ -64,13 +75,30 @@ namespace DBP_final
             if (currentBtn != null)
             {
 
-                currentBtn.BackColor = Color.FromArgb(31, 30, 68);
+                currentBtn.BackColor = Color.FromArgb(116, 86, 174);
                 currentBtn.ForeColor = Color.White;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = Color.White;
                 currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
+        }
+
+        private void OpenChildForm(Form childForm)
+        {
+            if (currentChildForm != null) { 
+                currentChildForm.Close();
+            }
+
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelDesktop.Controls.Add(childForm);
+            panelDesktop.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            lblTitleChildForm.Text = childForm.Text;
         }
 
         private void AdminForm_Load(object sender, EventArgs e)
@@ -86,6 +114,8 @@ namespace DBP_final
         private void iconButton1_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBcolors.color1);
+            OpenChildForm(new FormLastCheck());
+      
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
@@ -101,6 +131,50 @@ namespace DBP_final
         private void iconButton4_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBcolors.color4);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            currentChildForm.Close();
+            Reset();
+        }
+
+        private void Reset()
+        {
+            DisableButton();
+            leftBorderBtn.Visible = false;
+
+            iconCurrentChildForm.IconChar = IconChar.House;
+            iconCurrentChildForm.IconColor = Color.MediumPurple;
+            lblTitleChildForm.Text = "Home";
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.dll", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wMsg, int wParam, int lParm);
+
+
+        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }
