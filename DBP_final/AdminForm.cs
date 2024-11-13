@@ -121,16 +121,19 @@ namespace DBP_final
         private void iconButton2_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBcolors.color2);
+            OpenChildForm(new AdminPlus());
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBcolors.color3);
+            OpenChildForm(new AdminGradeInput());
         }
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBcolors.color4);
+            OpenChildForm(new AdminGradeReport());
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -175,6 +178,12 @@ namespace DBP_final
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBcolors.color5);
+            OpenChildForm(new 통계());
         }
     }
 }

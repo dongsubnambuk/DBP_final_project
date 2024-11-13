@@ -29,32 +29,32 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataSet11 = new DBP_final.DataSet1();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.oracleConnection1 = new Oracle.ManagedDataAccess.Client.OracleConnection();
+            this.oracleCommand1 = new Oracle.ManagedDataAccess.Client.OracleCommand();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.과목명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.신청인원수DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cOURSEENROLLMENTCOUNTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet11 = new DBP_final.DataSet1();
             this.cIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oPENDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cLASSPRODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lASTSEMESTERCOURSESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lASTSEMESTERCOURSESTableAdapter = new DBP_final.DataSet1TableAdapters.LASTSEMESTERCOURSESTableAdapter();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.과목명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.신청인원수DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cOURSEENROLLMENTCOUNTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cOURSEENROLLMENTCOUNTTableAdapter = new DBP_final.DataSet1TableAdapters.COURSEENROLLMENTCOUNTTableAdapter();
             this.coursesTableAdapter1 = new DBP_final.DataSet1TableAdapters.COURSESTableAdapter();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.oracleConnection1 = new Oracle.ManagedDataAccess.Client.OracleConnection();
-            this.oracleCommand1 = new Oracle.ManagedDataAccess.Client.OracleCommand();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lASTSEMESTERCOURSESBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOURSEENROLLMENTCOUNTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lASTSEMESTERCOURSESBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -68,23 +68,18 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "지난 학기 정보";
             // 
-            // dataSet11
-            // 
-            this.dataSet11.DataSetName = "DataSet1";
-            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ColumnHeadersHeight = 28;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cIDDataGridViewTextBoxColumn,
             this.cNAMEDataGridViewTextBoxColumn,
@@ -99,40 +94,6 @@
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // cIDDataGridViewTextBoxColumn
-            // 
-            this.cIDDataGridViewTextBoxColumn.DataPropertyName = "C_ID";
-            this.cIDDataGridViewTextBoxColumn.HeaderText = "과목번호";
-            this.cIDDataGridViewTextBoxColumn.Name = "cIDDataGridViewTextBoxColumn";
-            // 
-            // cNAMEDataGridViewTextBoxColumn
-            // 
-            this.cNAMEDataGridViewTextBoxColumn.DataPropertyName = "C_NAME";
-            this.cNAMEDataGridViewTextBoxColumn.HeaderText = "과목명";
-            this.cNAMEDataGridViewTextBoxColumn.Name = "cNAMEDataGridViewTextBoxColumn";
-            // 
-            // oPENDATEDataGridViewTextBoxColumn
-            // 
-            this.oPENDATEDataGridViewTextBoxColumn.DataPropertyName = "OPENDATE";
-            this.oPENDATEDataGridViewTextBoxColumn.HeaderText = "개설년도 및 학기";
-            this.oPENDATEDataGridViewTextBoxColumn.Name = "oPENDATEDataGridViewTextBoxColumn";
-            this.oPENDATEDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // cLASSPRODataGridViewTextBoxColumn
-            // 
-            this.cLASSPRODataGridViewTextBoxColumn.DataPropertyName = "CLASS_PRO";
-            this.cLASSPRODataGridViewTextBoxColumn.HeaderText = "담당교수";
-            this.cLASSPRODataGridViewTextBoxColumn.Name = "cLASSPRODataGridViewTextBoxColumn";
-            // 
-            // lASTSEMESTERCOURSESBindingSource
-            // 
-            this.lASTSEMESTERCOURSESBindingSource.DataMember = "LASTSEMESTERCOURSES";
-            this.lASTSEMESTERCOURSESBindingSource.DataSource = this.dataSet11;
-            // 
-            // lASTSEMESTERCOURSESTableAdapter
-            // 
-            this.lASTSEMESTERCOURSESTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
@@ -140,7 +101,8 @@
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dataGridView2.ColumnHeadersHeight = 28;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.과목명DataGridViewTextBoxColumn,
             this.신청인원수DataGridViewTextBoxColumn});
@@ -151,31 +113,6 @@
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.Size = new System.Drawing.Size(243, 336);
             this.dataGridView2.TabIndex = 3;
-            // 
-            // 과목명DataGridViewTextBoxColumn
-            // 
-            this.과목명DataGridViewTextBoxColumn.DataPropertyName = "과목명";
-            this.과목명DataGridViewTextBoxColumn.HeaderText = "과목명";
-            this.과목명DataGridViewTextBoxColumn.Name = "과목명DataGridViewTextBoxColumn";
-            // 
-            // 신청인원수DataGridViewTextBoxColumn
-            // 
-            this.신청인원수DataGridViewTextBoxColumn.DataPropertyName = "신청인원수";
-            this.신청인원수DataGridViewTextBoxColumn.HeaderText = "신청인원수";
-            this.신청인원수DataGridViewTextBoxColumn.Name = "신청인원수DataGridViewTextBoxColumn";
-            // 
-            // cOURSEENROLLMENTCOUNTBindingSource
-            // 
-            this.cOURSEENROLLMENTCOUNTBindingSource.DataMember = "COURSEENROLLMENTCOUNT";
-            this.cOURSEENROLLMENTCOUNTBindingSource.DataSource = this.dataSet11;
-            // 
-            // cOURSEENROLLMENTCOUNTTableAdapter
-            // 
-            this.cOURSEENROLLMENTCOUNTTableAdapter.ClearBeforeFill = true;
-            // 
-            // coursesTableAdapter1
-            // 
-            this.coursesTableAdapter1.ClearBeforeFill = true;
             // 
             // listBox1
             // 
@@ -217,6 +154,70 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "등록 정보";
             // 
+            // 과목명DataGridViewTextBoxColumn
+            // 
+            this.과목명DataGridViewTextBoxColumn.DataPropertyName = "과목명";
+            this.과목명DataGridViewTextBoxColumn.HeaderText = "과목명";
+            this.과목명DataGridViewTextBoxColumn.Name = "과목명DataGridViewTextBoxColumn";
+            // 
+            // 신청인원수DataGridViewTextBoxColumn
+            // 
+            this.신청인원수DataGridViewTextBoxColumn.DataPropertyName = "신청인원수";
+            this.신청인원수DataGridViewTextBoxColumn.HeaderText = "신청인원수";
+            this.신청인원수DataGridViewTextBoxColumn.Name = "신청인원수DataGridViewTextBoxColumn";
+            // 
+            // cOURSEENROLLMENTCOUNTBindingSource
+            // 
+            this.cOURSEENROLLMENTCOUNTBindingSource.DataMember = "COURSEENROLLMENTCOUNT";
+            this.cOURSEENROLLMENTCOUNTBindingSource.DataSource = this.dataSet11;
+            // 
+            // dataSet11
+            // 
+            this.dataSet11.DataSetName = "DataSet1";
+            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cIDDataGridViewTextBoxColumn
+            // 
+            this.cIDDataGridViewTextBoxColumn.DataPropertyName = "C_ID";
+            this.cIDDataGridViewTextBoxColumn.HeaderText = "과목번호";
+            this.cIDDataGridViewTextBoxColumn.Name = "cIDDataGridViewTextBoxColumn";
+            // 
+            // cNAMEDataGridViewTextBoxColumn
+            // 
+            this.cNAMEDataGridViewTextBoxColumn.DataPropertyName = "C_NAME";
+            this.cNAMEDataGridViewTextBoxColumn.HeaderText = "과목명";
+            this.cNAMEDataGridViewTextBoxColumn.Name = "cNAMEDataGridViewTextBoxColumn";
+            // 
+            // oPENDATEDataGridViewTextBoxColumn
+            // 
+            this.oPENDATEDataGridViewTextBoxColumn.DataPropertyName = "OPENDATE";
+            this.oPENDATEDataGridViewTextBoxColumn.HeaderText = "개설년도 및 학기";
+            this.oPENDATEDataGridViewTextBoxColumn.Name = "oPENDATEDataGridViewTextBoxColumn";
+            this.oPENDATEDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // cLASSPRODataGridViewTextBoxColumn
+            // 
+            this.cLASSPRODataGridViewTextBoxColumn.DataPropertyName = "CLASS_PRO";
+            this.cLASSPRODataGridViewTextBoxColumn.HeaderText = "담당교수";
+            this.cLASSPRODataGridViewTextBoxColumn.Name = "cLASSPRODataGridViewTextBoxColumn";
+            // 
+            // lASTSEMESTERCOURSESBindingSource
+            // 
+            this.lASTSEMESTERCOURSESBindingSource.DataMember = "LASTSEMESTERCOURSES";
+            this.lASTSEMESTERCOURSESBindingSource.DataSource = this.dataSet11;
+            // 
+            // lASTSEMESTERCOURSESTableAdapter
+            // 
+            this.lASTSEMESTERCOURSESTableAdapter.ClearBeforeFill = true;
+            // 
+            // cOURSEENROLLMENTCOUNTTableAdapter
+            // 
+            this.cOURSEENROLLMENTCOUNTTableAdapter.ClearBeforeFill = true;
+            // 
+            // coursesTableAdapter1
+            // 
+            this.coursesTableAdapter1.ClearBeforeFill = true;
+            // 
             // FormLastCheck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -230,13 +231,13 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "FormLastCheck";
-            this.Text = "FormLastCheck";
+            this.Text = "지난학기 조회";
             this.Load += new System.EventHandler(this.FormLastCheck_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lASTSEMESTERCOURSESBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOURSEENROLLMENTCOUNTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lASTSEMESTERCOURSESBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

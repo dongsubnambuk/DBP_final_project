@@ -37,3 +37,7 @@ C:\Users\user\Desktop\DBP_final\DBP_final\obj\Debug\DBP_final.exe
 C:\Users\user\Desktop\DBP_final\DBP_final\obj\Debug\DBP_final.pdb
 C:\Users\user\Desktop\DBP_final\DBP_final\bin\Debug\DBP_final.pdb
 C:\Users\user\Desktop\DBP_final\DBP_final\obj\Debug\DBP_final.FormLastCheck.resources
+C:\Users\user\Desktop\DBP_final\DBP_final\obj\Debug\DBP_final.AdminPlus.resources
+C:\Users\user\Desktop\DBP_final\DBP_final\obj\Debug\DBP_final.AdminGradeInput.resources
+C:\Users\user\Desktop\DBP_final\DBP_final\obj\Debug\DBP_final.AdminGradeReport.resources
+C:\Users\user\Desktop\DBP_final\DBP_final\obj\Debug\DBP_final.통계.resources

@@ -20,21 +20,19 @@ namespace DBP_final {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSet3")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSet1 : global::System.Data.DataSet {
+    public partial class DataSet3 : global::System.Data.DataSet {
         
-        private COURSESDataTable tableCOURSES;
+        private ENROLLDataTable tableENROLL;
         
-        private COURSEENROLLMENTCOUNTDataTable tableCOURSEENROLLMENTCOUNT;
-        
-        private LASTSEMESTERCOURSESDataTable tableLASTSEMESTERCOURSES;
+        private ENROLLWITHNAMESDataTable tableENROLLWITHNAMES;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public DataSet1() {
+        public DataSet3() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -45,7 +43,7 @@ namespace DBP_final {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected DataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSet3(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -58,14 +56,11 @@ namespace DBP_final {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["COURSES"] != null)) {
-                    base.Tables.Add(new COURSESDataTable(ds.Tables["COURSES"]));
+                if ((ds.Tables["ENROLL"] != null)) {
+                    base.Tables.Add(new ENROLLDataTable(ds.Tables["ENROLL"]));
                 }
-                if ((ds.Tables["COURSEENROLLMENTCOUNT"] != null)) {
-                    base.Tables.Add(new COURSEENROLLMENTCOUNTDataTable(ds.Tables["COURSEENROLLMENTCOUNT"]));
-                }
-                if ((ds.Tables["LASTSEMESTERCOURSES"] != null)) {
-                    base.Tables.Add(new LASTSEMESTERCOURSESDataTable(ds.Tables["LASTSEMESTERCOURSES"]));
+                if ((ds.Tables["ENROLLWITHNAMES"] != null)) {
+                    base.Tables.Add(new ENROLLWITHNAMESDataTable(ds.Tables["ENROLLWITHNAMES"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -89,9 +84,9 @@ namespace DBP_final {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public COURSESDataTable COURSES {
+        public ENROLLDataTable ENROLL {
             get {
-                return this.tableCOURSES;
+                return this.tableENROLL;
             }
         }
         
@@ -99,19 +94,9 @@ namespace DBP_final {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public COURSEENROLLMENTCOUNTDataTable COURSEENROLLMENTCOUNT {
+        public ENROLLWITHNAMESDataTable ENROLLWITHNAMES {
             get {
-                return this.tableCOURSEENROLLMENTCOUNT;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public LASTSEMESTERCOURSESDataTable LASTSEMESTERCOURSES {
-            get {
-                return this.tableLASTSEMESTERCOURSES;
+                return this.tableENROLLWITHNAMES;
             }
         }
         
@@ -157,7 +142,7 @@ namespace DBP_final {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSet1 cln = ((DataSet1)(base.Clone()));
+            DataSet3 cln = ((DataSet3)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -182,14 +167,11 @@ namespace DBP_final {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["COURSES"] != null)) {
-                    base.Tables.Add(new COURSESDataTable(ds.Tables["COURSES"]));
+                if ((ds.Tables["ENROLL"] != null)) {
+                    base.Tables.Add(new ENROLLDataTable(ds.Tables["ENROLL"]));
                 }
-                if ((ds.Tables["COURSEENROLLMENTCOUNT"] != null)) {
-                    base.Tables.Add(new COURSEENROLLMENTCOUNTDataTable(ds.Tables["COURSEENROLLMENTCOUNT"]));
-                }
-                if ((ds.Tables["LASTSEMESTERCOURSES"] != null)) {
-                    base.Tables.Add(new LASTSEMESTERCOURSESDataTable(ds.Tables["LASTSEMESTERCOURSES"]));
+                if ((ds.Tables["ENROLLWITHNAMES"] != null)) {
+                    base.Tables.Add(new ENROLLWITHNAMESDataTable(ds.Tables["ENROLLWITHNAMES"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -224,22 +206,16 @@ namespace DBP_final {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableCOURSES = ((COURSESDataTable)(base.Tables["COURSES"]));
+            this.tableENROLL = ((ENROLLDataTable)(base.Tables["ENROLL"]));
             if ((initTable == true)) {
-                if ((this.tableCOURSES != null)) {
-                    this.tableCOURSES.InitVars();
+                if ((this.tableENROLL != null)) {
+                    this.tableENROLL.InitVars();
                 }
             }
-            this.tableCOURSEENROLLMENTCOUNT = ((COURSEENROLLMENTCOUNTDataTable)(base.Tables["COURSEENROLLMENTCOUNT"]));
+            this.tableENROLLWITHNAMES = ((ENROLLWITHNAMESDataTable)(base.Tables["ENROLLWITHNAMES"]));
             if ((initTable == true)) {
-                if ((this.tableCOURSEENROLLMENTCOUNT != null)) {
-                    this.tableCOURSEENROLLMENTCOUNT.InitVars();
-                }
-            }
-            this.tableLASTSEMESTERCOURSES = ((LASTSEMESTERCOURSESDataTable)(base.Tables["LASTSEMESTERCOURSES"]));
-            if ((initTable == true)) {
-                if ((this.tableLASTSEMESTERCOURSES != null)) {
-                    this.tableLASTSEMESTERCOURSES.InitVars();
+                if ((this.tableENROLLWITHNAMES != null)) {
+                    this.tableENROLLWITHNAMES.InitVars();
                 }
             }
         }
@@ -247,34 +223,26 @@ namespace DBP_final {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSet1";
+            this.DataSetName = "DataSet3";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSet1.xsd";
+            this.Namespace = "http://tempuri.org/DataSet3.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableCOURSES = new COURSESDataTable();
-            base.Tables.Add(this.tableCOURSES);
-            this.tableCOURSEENROLLMENTCOUNT = new COURSEENROLLMENTCOUNTDataTable();
-            base.Tables.Add(this.tableCOURSEENROLLMENTCOUNT);
-            this.tableLASTSEMESTERCOURSES = new LASTSEMESTERCOURSESDataTable();
-            base.Tables.Add(this.tableLASTSEMESTERCOURSES);
+            this.tableENROLL = new ENROLLDataTable();
+            base.Tables.Add(this.tableENROLL);
+            this.tableENROLLWITHNAMES = new ENROLLWITHNAMESDataTable();
+            base.Tables.Add(this.tableENROLLWITHNAMES);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeCOURSES() {
+        private bool ShouldSerializeENROLL() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeCOURSEENROLLMENTCOUNT() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeLASTSEMESTERCOURSES() {
+        private bool ShouldSerializeENROLLWITHNAMES() {
             return false;
         }
         
@@ -289,7 +257,7 @@ namespace DBP_final {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSet1 ds = new DataSet1();
+            DataSet3 ds = new DataSet3();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -334,33 +302,36 @@ namespace DBP_final {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void COURSESRowChangeEventHandler(object sender, COURSESRowChangeEvent e);
+        public delegate void ENROLLRowChangeEventHandler(object sender, ENROLLRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void COURSEENROLLMENTCOUNTRowChangeEventHandler(object sender, COURSEENROLLMENTCOUNTRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void LASTSEMESTERCOURSESRowChangeEventHandler(object sender, LASTSEMESTERCOURSESRowChangeEvent e);
+        public delegate void ENROLLWITHNAMESRowChangeEventHandler(object sender, ENROLLWITHNAMESRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class COURSESDataTable : global::System.Data.TypedTableBase<COURSESRow> {
+        public partial class ENROLLDataTable : global::System.Data.TypedTableBase<ENROLLRow> {
+            
+            private global::System.Data.DataColumn columnS_ID;
             
             private global::System.Data.DataColumn columnC_ID;
             
-            private global::System.Data.DataColumn columnC_NAME;
+            private global::System.Data.DataColumn columnEXAM_SCORE;
             
-            private global::System.Data.DataColumn columnOPENDATE;
+            private global::System.Data.DataColumn columnATT_SCORE;
             
-            private global::System.Data.DataColumn columnCLASS_PRO;
+            private global::System.Data.DataColumn columnASS_SCORE1;
+            
+            private global::System.Data.DataColumn columnASS_SCORE2;
+            
+            private global::System.Data.DataColumn columnFINAL_GRADE;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public COURSESDataTable() {
-                this.TableName = "COURSES";
+            public ENROLLDataTable() {
+                this.TableName = "ENROLL";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -368,7 +339,7 @@ namespace DBP_final {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal COURSESDataTable(global::System.Data.DataTable table) {
+            internal ENROLLDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -385,9 +356,17 @@ namespace DBP_final {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected COURSESDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected ENROLLDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn S_IDColumn {
+                get {
+                    return this.columnS_ID;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -400,25 +379,41 @@ namespace DBP_final {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn C_NAMEColumn {
+            public global::System.Data.DataColumn EXAM_SCOREColumn {
                 get {
-                    return this.columnC_NAME;
+                    return this.columnEXAM_SCORE;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn OPENDATEColumn {
+            public global::System.Data.DataColumn ATT_SCOREColumn {
                 get {
-                    return this.columnOPENDATE;
+                    return this.columnATT_SCORE;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CLASS_PROColumn {
+            public global::System.Data.DataColumn ASS_SCORE1Column {
                 get {
-                    return this.columnCLASS_PRO;
+                    return this.columnASS_SCORE1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ASS_SCORE2Column {
+                get {
+                    return this.columnASS_SCORE2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FINAL_GRADEColumn {
+                get {
+                    return this.columnFINAL_GRADE;
                 }
             }
             
@@ -433,55 +428,59 @@ namespace DBP_final {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public COURSESRow this[int index] {
+            public ENROLLRow this[int index] {
                 get {
-                    return ((COURSESRow)(this.Rows[index]));
+                    return ((ENROLLRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event COURSESRowChangeEventHandler COURSESRowChanging;
+            public event ENROLLRowChangeEventHandler ENROLLRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event COURSESRowChangeEventHandler COURSESRowChanged;
+            public event ENROLLRowChangeEventHandler ENROLLRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event COURSESRowChangeEventHandler COURSESRowDeleting;
+            public event ENROLLRowChangeEventHandler ENROLLRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event COURSESRowChangeEventHandler COURSESRowDeleted;
+            public event ENROLLRowChangeEventHandler ENROLLRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddCOURSESRow(COURSESRow row) {
+            public void AddENROLLRow(ENROLLRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public COURSESRow AddCOURSESRow(decimal C_ID, string C_NAME, string OPENDATE, decimal CLASS_PRO) {
-                COURSESRow rowCOURSESRow = ((COURSESRow)(this.NewRow()));
+            public ENROLLRow AddENROLLRow(decimal S_ID, decimal C_ID, decimal EXAM_SCORE, decimal ATT_SCORE, decimal ASS_SCORE1, decimal ASS_SCORE2, string FINAL_GRADE) {
+                ENROLLRow rowENROLLRow = ((ENROLLRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        S_ID,
                         C_ID,
-                        C_NAME,
-                        OPENDATE,
-                        CLASS_PRO};
-                rowCOURSESRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowCOURSESRow);
-                return rowCOURSESRow;
+                        EXAM_SCORE,
+                        ATT_SCORE,
+                        ASS_SCORE1,
+                        ASS_SCORE2,
+                        FINAL_GRADE};
+                rowENROLLRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowENROLLRow);
+                return rowENROLLRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public COURSESRow FindByC_ID(decimal C_ID) {
-                return ((COURSESRow)(this.Rows.Find(new object[] {
+            public ENROLLRow FindByS_IDC_ID(decimal S_ID, decimal C_ID) {
+                return ((ENROLLRow)(this.Rows.Find(new object[] {
+                            S_ID,
                             C_ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                COURSESDataTable cln = ((COURSESDataTable)(base.Clone()));
+                ENROLLDataTable cln = ((ENROLLDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -489,61 +488,70 @@ namespace DBP_final {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new COURSESDataTable();
+                return new ENROLLDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
+                this.columnS_ID = base.Columns["S_ID"];
                 this.columnC_ID = base.Columns["C_ID"];
-                this.columnC_NAME = base.Columns["C_NAME"];
-                this.columnOPENDATE = base.Columns["OPENDATE"];
-                this.columnCLASS_PRO = base.Columns["CLASS_PRO"];
+                this.columnEXAM_SCORE = base.Columns["EXAM_SCORE"];
+                this.columnATT_SCORE = base.Columns["ATT_SCORE"];
+                this.columnASS_SCORE1 = base.Columns["ASS_SCORE1"];
+                this.columnASS_SCORE2 = base.Columns["ASS_SCORE2"];
+                this.columnFINAL_GRADE = base.Columns["FINAL_GRADE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
+                this.columnS_ID = new global::System.Data.DataColumn("S_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnS_ID);
                 this.columnC_ID = new global::System.Data.DataColumn("C_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnC_ID);
-                this.columnC_NAME = new global::System.Data.DataColumn("C_NAME", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnC_NAME);
-                this.columnOPENDATE = new global::System.Data.DataColumn("OPENDATE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOPENDATE);
-                this.columnCLASS_PRO = new global::System.Data.DataColumn("CLASS_PRO", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCLASS_PRO);
+                this.columnEXAM_SCORE = new global::System.Data.DataColumn("EXAM_SCORE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEXAM_SCORE);
+                this.columnATT_SCORE = new global::System.Data.DataColumn("ATT_SCORE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnATT_SCORE);
+                this.columnASS_SCORE1 = new global::System.Data.DataColumn("ASS_SCORE1", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnASS_SCORE1);
+                this.columnASS_SCORE2 = new global::System.Data.DataColumn("ASS_SCORE2", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnASS_SCORE2);
+                this.columnFINAL_GRADE = new global::System.Data.DataColumn("FINAL_GRADE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFINAL_GRADE);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnS_ID,
                                 this.columnC_ID}, true));
+                this.columnS_ID.AllowDBNull = false;
                 this.columnC_ID.AllowDBNull = false;
-                this.columnC_ID.Unique = true;
-                this.columnC_NAME.MaxLength = 20;
-                this.columnOPENDATE.MaxLength = 20;
+                this.columnFINAL_GRADE.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public COURSESRow NewCOURSESRow() {
-                return ((COURSESRow)(this.NewRow()));
+            public ENROLLRow NewENROLLRow() {
+                return ((ENROLLRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new COURSESRow(builder);
+                return new ENROLLRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(COURSESRow);
+                return typeof(ENROLLRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.COURSESRowChanged != null)) {
-                    this.COURSESRowChanged(this, new COURSESRowChangeEvent(((COURSESRow)(e.Row)), e.Action));
+                if ((this.ENROLLRowChanged != null)) {
+                    this.ENROLLRowChanged(this, new ENROLLRowChangeEvent(((ENROLLRow)(e.Row)), e.Action));
                 }
             }
             
@@ -551,8 +559,8 @@ namespace DBP_final {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.COURSESRowChanging != null)) {
-                    this.COURSESRowChanging(this, new COURSESRowChangeEvent(((COURSESRow)(e.Row)), e.Action));
+                if ((this.ENROLLRowChanging != null)) {
+                    this.ENROLLRowChanging(this, new ENROLLRowChangeEvent(((ENROLLRow)(e.Row)), e.Action));
                 }
             }
             
@@ -560,8 +568,8 @@ namespace DBP_final {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.COURSESRowDeleted != null)) {
-                    this.COURSESRowDeleted(this, new COURSESRowChangeEvent(((COURSESRow)(e.Row)), e.Action));
+                if ((this.ENROLLRowDeleted != null)) {
+                    this.ENROLLRowDeleted(this, new ENROLLRowChangeEvent(((ENROLLRow)(e.Row)), e.Action));
                 }
             }
             
@@ -569,14 +577,14 @@ namespace DBP_final {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.COURSESRowDeleting != null)) {
-                    this.COURSESRowDeleting(this, new COURSESRowChangeEvent(((COURSESRow)(e.Row)), e.Action));
+                if ((this.ENROLLRowDeleting != null)) {
+                    this.ENROLLRowDeleting(this, new ENROLLRowChangeEvent(((ENROLLRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveCOURSESRow(COURSESRow row) {
+            public void RemoveENROLLRow(ENROLLRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -585,7 +593,7 @@ namespace DBP_final {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
+                DataSet3 ds = new DataSet3();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -603,7 +611,7 @@ namespace DBP_final {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "COURSESDataTable";
+                attribute2.FixedValue = "ENROLLDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -649,16 +657,12 @@ namespace DBP_final {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class COURSEENROLLMENTCOUNTDataTable : global::System.Data.TypedTableBase<COURSEENROLLMENTCOUNTRow> {
-            
-            private global::System.Data.DataColumn column과목명;
-            
-            private global::System.Data.DataColumn column신청인원수;
+        public partial class ENROLLWITHNAMESDataTable : global::System.Data.TypedTableBase<ENROLLWITHNAMESRow> {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public COURSEENROLLMENTCOUNTDataTable() {
-                this.TableName = "COURSEENROLLMENTCOUNT";
+            public ENROLLWITHNAMESDataTable() {
+                this.TableName = "ENROLLWITHNAMES";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -666,7 +670,7 @@ namespace DBP_final {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal COURSEENROLLMENTCOUNTDataTable(global::System.Data.DataTable table) {
+            internal ENROLLWITHNAMESDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -683,25 +687,9 @@ namespace DBP_final {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected COURSEENROLLMENTCOUNTDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected ENROLLWITHNAMESDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn 과목명Column {
-                get {
-                    return this.column과목명;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn 신청인원수Column {
-                get {
-                    return this.column신청인원수;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -715,46 +703,44 @@ namespace DBP_final {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public COURSEENROLLMENTCOUNTRow this[int index] {
+            public ENROLLWITHNAMESRow this[int index] {
                 get {
-                    return ((COURSEENROLLMENTCOUNTRow)(this.Rows[index]));
+                    return ((ENROLLWITHNAMESRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event COURSEENROLLMENTCOUNTRowChangeEventHandler COURSEENROLLMENTCOUNTRowChanging;
+            public event ENROLLWITHNAMESRowChangeEventHandler ENROLLWITHNAMESRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event COURSEENROLLMENTCOUNTRowChangeEventHandler COURSEENROLLMENTCOUNTRowChanged;
+            public event ENROLLWITHNAMESRowChangeEventHandler ENROLLWITHNAMESRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event COURSEENROLLMENTCOUNTRowChangeEventHandler COURSEENROLLMENTCOUNTRowDeleting;
+            public event ENROLLWITHNAMESRowChangeEventHandler ENROLLWITHNAMESRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event COURSEENROLLMENTCOUNTRowChangeEventHandler COURSEENROLLMENTCOUNTRowDeleted;
+            public event ENROLLWITHNAMESRowChangeEventHandler ENROLLWITHNAMESRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddCOURSEENROLLMENTCOUNTRow(COURSEENROLLMENTCOUNTRow row) {
+            public void AddENROLLWITHNAMESRow(ENROLLWITHNAMESRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public COURSEENROLLMENTCOUNTRow AddCOURSEENROLLMENTCOUNTRow(string 과목명, decimal 신청인원수) {
-                COURSEENROLLMENTCOUNTRow rowCOURSEENROLLMENTCOUNTRow = ((COURSEENROLLMENTCOUNTRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        과목명,
-                        신청인원수};
-                rowCOURSEENROLLMENTCOUNTRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowCOURSEENROLLMENTCOUNTRow);
-                return rowCOURSEENROLLMENTCOUNTRow;
+            public ENROLLWITHNAMESRow AddENROLLWITHNAMESRow() {
+                ENROLLWITHNAMESRow rowENROLLWITHNAMESRow = ((ENROLLWITHNAMESRow)(this.NewRow()));
+                object[] columnValuesArray = new object[0];
+                rowENROLLWITHNAMESRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowENROLLWITHNAMESRow);
+                return rowENROLLWITHNAMESRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                COURSEENROLLMENTCOUNTDataTable cln = ((COURSEENROLLMENTCOUNTDataTable)(base.Clone()));
+                ENROLLWITHNAMESDataTable cln = ((ENROLLWITHNAMESDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -762,50 +748,43 @@ namespace DBP_final {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new COURSEENROLLMENTCOUNTDataTable();
+                return new ENROLLWITHNAMESDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.column과목명 = base.Columns["과목명"];
-                this.column신청인원수 = base.Columns["신청인원수"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.column과목명 = new global::System.Data.DataColumn("과목명", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column과목명);
-                this.column신청인원수 = new global::System.Data.DataColumn("신청인원수", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column신청인원수);
-                this.column과목명.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public COURSEENROLLMENTCOUNTRow NewCOURSEENROLLMENTCOUNTRow() {
-                return ((COURSEENROLLMENTCOUNTRow)(this.NewRow()));
+            public ENROLLWITHNAMESRow NewENROLLWITHNAMESRow() {
+                return ((ENROLLWITHNAMESRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new COURSEENROLLMENTCOUNTRow(builder);
+                return new ENROLLWITHNAMESRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(COURSEENROLLMENTCOUNTRow);
+                return typeof(ENROLLWITHNAMESRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.COURSEENROLLMENTCOUNTRowChanged != null)) {
-                    this.COURSEENROLLMENTCOUNTRowChanged(this, new COURSEENROLLMENTCOUNTRowChangeEvent(((COURSEENROLLMENTCOUNTRow)(e.Row)), e.Action));
+                if ((this.ENROLLWITHNAMESRowChanged != null)) {
+                    this.ENROLLWITHNAMESRowChanged(this, new ENROLLWITHNAMESRowChangeEvent(((ENROLLWITHNAMESRow)(e.Row)), e.Action));
                 }
             }
             
@@ -813,8 +792,8 @@ namespace DBP_final {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.COURSEENROLLMENTCOUNTRowChanging != null)) {
-                    this.COURSEENROLLMENTCOUNTRowChanging(this, new COURSEENROLLMENTCOUNTRowChangeEvent(((COURSEENROLLMENTCOUNTRow)(e.Row)), e.Action));
+                if ((this.ENROLLWITHNAMESRowChanging != null)) {
+                    this.ENROLLWITHNAMESRowChanging(this, new ENROLLWITHNAMESRowChangeEvent(((ENROLLWITHNAMESRow)(e.Row)), e.Action));
                 }
             }
             
@@ -822,8 +801,8 @@ namespace DBP_final {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.COURSEENROLLMENTCOUNTRowDeleted != null)) {
-                    this.COURSEENROLLMENTCOUNTRowDeleted(this, new COURSEENROLLMENTCOUNTRowChangeEvent(((COURSEENROLLMENTCOUNTRow)(e.Row)), e.Action));
+                if ((this.ENROLLWITHNAMESRowDeleted != null)) {
+                    this.ENROLLWITHNAMESRowDeleted(this, new ENROLLWITHNAMESRowChangeEvent(((ENROLLWITHNAMESRow)(e.Row)), e.Action));
                 }
             }
             
@@ -831,14 +810,14 @@ namespace DBP_final {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.COURSEENROLLMENTCOUNTRowDeleting != null)) {
-                    this.COURSEENROLLMENTCOUNTRowDeleting(this, new COURSEENROLLMENTCOUNTRowChangeEvent(((COURSEENROLLMENTCOUNTRow)(e.Row)), e.Action));
+                if ((this.ENROLLWITHNAMESRowDeleting != null)) {
+                    this.ENROLLWITHNAMESRowDeleting(this, new ENROLLWITHNAMESRowChangeEvent(((ENROLLWITHNAMESRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveCOURSEENROLLMENTCOUNTRow(COURSEENROLLMENTCOUNTRow row) {
+            public void RemoveENROLLWITHNAMESRow(ENROLLWITHNAMESRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -847,7 +826,7 @@ namespace DBP_final {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
+                DataSet3 ds = new DataSet3();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -865,300 +844,7 @@ namespace DBP_final {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "COURSEENROLLMENTCOUNTDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class LASTSEMESTERCOURSESDataTable : global::System.Data.TypedTableBase<LASTSEMESTERCOURSESRow> {
-            
-            private global::System.Data.DataColumn columnC_ID;
-            
-            private global::System.Data.DataColumn columnC_NAME;
-            
-            private global::System.Data.DataColumn columnOPENDATE;
-            
-            private global::System.Data.DataColumn columnCLASS_PRO;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public LASTSEMESTERCOURSESDataTable() {
-                this.TableName = "LASTSEMESTERCOURSES";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal LASTSEMESTERCOURSESDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected LASTSEMESTERCOURSESDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn C_IDColumn {
-                get {
-                    return this.columnC_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn C_NAMEColumn {
-                get {
-                    return this.columnC_NAME;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn OPENDATEColumn {
-                get {
-                    return this.columnOPENDATE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CLASS_PROColumn {
-                get {
-                    return this.columnCLASS_PRO;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public LASTSEMESTERCOURSESRow this[int index] {
-                get {
-                    return ((LASTSEMESTERCOURSESRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event LASTSEMESTERCOURSESRowChangeEventHandler LASTSEMESTERCOURSESRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event LASTSEMESTERCOURSESRowChangeEventHandler LASTSEMESTERCOURSESRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event LASTSEMESTERCOURSESRowChangeEventHandler LASTSEMESTERCOURSESRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event LASTSEMESTERCOURSESRowChangeEventHandler LASTSEMESTERCOURSESRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddLASTSEMESTERCOURSESRow(LASTSEMESTERCOURSESRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public LASTSEMESTERCOURSESRow AddLASTSEMESTERCOURSESRow(decimal C_ID, string C_NAME, string OPENDATE, string CLASS_PRO) {
-                LASTSEMESTERCOURSESRow rowLASTSEMESTERCOURSESRow = ((LASTSEMESTERCOURSESRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        C_ID,
-                        C_NAME,
-                        OPENDATE,
-                        CLASS_PRO};
-                rowLASTSEMESTERCOURSESRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowLASTSEMESTERCOURSESRow);
-                return rowLASTSEMESTERCOURSESRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                LASTSEMESTERCOURSESDataTable cln = ((LASTSEMESTERCOURSESDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new LASTSEMESTERCOURSESDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal void InitVars() {
-                this.columnC_ID = base.Columns["C_ID"];
-                this.columnC_NAME = base.Columns["C_NAME"];
-                this.columnOPENDATE = base.Columns["OPENDATE"];
-                this.columnCLASS_PRO = base.Columns["CLASS_PRO"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            private void InitClass() {
-                this.columnC_ID = new global::System.Data.DataColumn("C_ID", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnC_ID);
-                this.columnC_NAME = new global::System.Data.DataColumn("C_NAME", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnC_NAME);
-                this.columnOPENDATE = new global::System.Data.DataColumn("OPENDATE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOPENDATE);
-                this.columnCLASS_PRO = new global::System.Data.DataColumn("CLASS_PRO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCLASS_PRO);
-                this.columnC_ID.AllowDBNull = false;
-                this.columnC_NAME.MaxLength = 20;
-                this.columnOPENDATE.MaxLength = 20;
-                this.columnCLASS_PRO.MaxLength = 20;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public LASTSEMESTERCOURSESRow NewLASTSEMESTERCOURSESRow() {
-                return ((LASTSEMESTERCOURSESRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new LASTSEMESTERCOURSESRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(LASTSEMESTERCOURSESRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.LASTSEMESTERCOURSESRowChanged != null)) {
-                    this.LASTSEMESTERCOURSESRowChanged(this, new LASTSEMESTERCOURSESRowChangeEvent(((LASTSEMESTERCOURSESRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.LASTSEMESTERCOURSESRowChanging != null)) {
-                    this.LASTSEMESTERCOURSESRowChanging(this, new LASTSEMESTERCOURSESRowChangeEvent(((LASTSEMESTERCOURSESRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.LASTSEMESTERCOURSESRowDeleted != null)) {
-                    this.LASTSEMESTERCOURSESRowDeleted(this, new LASTSEMESTERCOURSESRowChangeEvent(((LASTSEMESTERCOURSESRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.LASTSEMESTERCOURSESRowDeleting != null)) {
-                    this.LASTSEMESTERCOURSESRowDeleting(this, new LASTSEMESTERCOURSESRowChangeEvent(((LASTSEMESTERCOURSESRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveLASTSEMESTERCOURSESRow(LASTSEMESTERCOURSESRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "LASTSEMESTERCOURSESDataTable";
+                attribute2.FixedValue = "ENROLLWITHNAMESDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1202,291 +888,192 @@ namespace DBP_final {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class COURSESRow : global::System.Data.DataRow {
+        public partial class ENROLLRow : global::System.Data.DataRow {
             
-            private COURSESDataTable tableCOURSES;
+            private ENROLLDataTable tableENROLL;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal COURSESRow(global::System.Data.DataRowBuilder rb) : 
+            internal ENROLLRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableCOURSES = ((COURSESDataTable)(this.Table));
+                this.tableENROLL = ((ENROLLDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal S_ID {
+                get {
+                    return ((decimal)(this[this.tableENROLL.S_IDColumn]));
+                }
+                set {
+                    this[this.tableENROLL.S_IDColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public decimal C_ID {
                 get {
-                    return ((decimal)(this[this.tableCOURSES.C_IDColumn]));
+                    return ((decimal)(this[this.tableENROLL.C_IDColumn]));
                 }
                 set {
-                    this[this.tableCOURSES.C_IDColumn] = value;
+                    this[this.tableENROLL.C_IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string C_NAME {
+            public decimal EXAM_SCORE {
                 get {
                     try {
-                        return ((string)(this[this.tableCOURSES.C_NAMEColumn]));
+                        return ((decimal)(this[this.tableENROLL.EXAM_SCOREColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'COURSES\' 테이블의 \'C_NAME\' 열의 값이 DBNull입니다.", e);
+                        throw new global::System.Data.StrongTypingException("\'ENROLL\' 테이블의 \'EXAM_SCORE\' 열의 값이 DBNull입니다.", e);
                     }
                 }
                 set {
-                    this[this.tableCOURSES.C_NAMEColumn] = value;
+                    this[this.tableENROLL.EXAM_SCOREColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string OPENDATE {
+            public decimal ATT_SCORE {
                 get {
                     try {
-                        return ((string)(this[this.tableCOURSES.OPENDATEColumn]));
+                        return ((decimal)(this[this.tableENROLL.ATT_SCOREColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'COURSES\' 테이블의 \'OPENDATE\' 열의 값이 DBNull입니다.", e);
+                        throw new global::System.Data.StrongTypingException("\'ENROLL\' 테이블의 \'ATT_SCORE\' 열의 값이 DBNull입니다.", e);
                     }
                 }
                 set {
-                    this[this.tableCOURSES.OPENDATEColumn] = value;
+                    this[this.tableENROLL.ATT_SCOREColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal CLASS_PRO {
+            public decimal ASS_SCORE1 {
                 get {
                     try {
-                        return ((decimal)(this[this.tableCOURSES.CLASS_PROColumn]));
+                        return ((decimal)(this[this.tableENROLL.ASS_SCORE1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'COURSES\' 테이블의 \'CLASS_PRO\' 열의 값이 DBNull입니다.", e);
+                        throw new global::System.Data.StrongTypingException("\'ENROLL\' 테이블의 \'ASS_SCORE1\' 열의 값이 DBNull입니다.", e);
                     }
                 }
                 set {
-                    this[this.tableCOURSES.CLASS_PROColumn] = value;
+                    this[this.tableENROLL.ASS_SCORE1Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsC_NAMENull() {
-                return this.IsNull(this.tableCOURSES.C_NAMEColumn);
+            public decimal ASS_SCORE2 {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableENROLL.ASS_SCORE2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'ENROLL\' 테이블의 \'ASS_SCORE2\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableENROLL.ASS_SCORE2Column] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetC_NAMENull() {
-                this[this.tableCOURSES.C_NAMEColumn] = global::System.Convert.DBNull;
+            public string FINAL_GRADE {
+                get {
+                    try {
+                        return ((string)(this[this.tableENROLL.FINAL_GRADEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'ENROLL\' 테이블의 \'FINAL_GRADE\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableENROLL.FINAL_GRADEColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsOPENDATENull() {
-                return this.IsNull(this.tableCOURSES.OPENDATEColumn);
+            public bool IsEXAM_SCORENull() {
+                return this.IsNull(this.tableENROLL.EXAM_SCOREColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetOPENDATENull() {
-                this[this.tableCOURSES.OPENDATEColumn] = global::System.Convert.DBNull;
+            public void SetEXAM_SCORENull() {
+                this[this.tableENROLL.EXAM_SCOREColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCLASS_PRONull() {
-                return this.IsNull(this.tableCOURSES.CLASS_PROColumn);
+            public bool IsATT_SCORENull() {
+                return this.IsNull(this.tableENROLL.ATT_SCOREColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCLASS_PRONull() {
-                this[this.tableCOURSES.CLASS_PROColumn] = global::System.Convert.DBNull;
+            public void SetATT_SCORENull() {
+                this[this.tableENROLL.ATT_SCOREColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsASS_SCORE1Null() {
+                return this.IsNull(this.tableENROLL.ASS_SCORE1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetASS_SCORE1Null() {
+                this[this.tableENROLL.ASS_SCORE1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsASS_SCORE2Null() {
+                return this.IsNull(this.tableENROLL.ASS_SCORE2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetASS_SCORE2Null() {
+                this[this.tableENROLL.ASS_SCORE2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsFINAL_GRADENull() {
+                return this.IsNull(this.tableENROLL.FINAL_GRADEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetFINAL_GRADENull() {
+                this[this.tableENROLL.FINAL_GRADEColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class COURSEENROLLMENTCOUNTRow : global::System.Data.DataRow {
+        public partial class ENROLLWITHNAMESRow : global::System.Data.DataRow {
             
-            private COURSEENROLLMENTCOUNTDataTable tableCOURSEENROLLMENTCOUNT;
+            private ENROLLWITHNAMESDataTable tableENROLLWITHNAMES;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal COURSEENROLLMENTCOUNTRow(global::System.Data.DataRowBuilder rb) : 
+            internal ENROLLWITHNAMESRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableCOURSEENROLLMENTCOUNT = ((COURSEENROLLMENTCOUNTDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string 과목명 {
-                get {
-                    try {
-                        return ((string)(this[this.tableCOURSEENROLLMENTCOUNT.과목명Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'COURSEENROLLMENTCOUNT\' 테이블의 \'과목명\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableCOURSEENROLLMENTCOUNT.과목명Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal 신청인원수 {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableCOURSEENROLLMENTCOUNT.신청인원수Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'COURSEENROLLMENTCOUNT\' 테이블의 \'신청인원수\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableCOURSEENROLLMENTCOUNT.신청인원수Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Is과목명Null() {
-                return this.IsNull(this.tableCOURSEENROLLMENTCOUNT.과목명Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Set과목명Null() {
-                this[this.tableCOURSEENROLLMENTCOUNT.과목명Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Is신청인원수Null() {
-                return this.IsNull(this.tableCOURSEENROLLMENTCOUNT.신청인원수Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Set신청인원수Null() {
-                this[this.tableCOURSEENROLLMENTCOUNT.신청인원수Column] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class LASTSEMESTERCOURSESRow : global::System.Data.DataRow {
-            
-            private LASTSEMESTERCOURSESDataTable tableLASTSEMESTERCOURSES;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal LASTSEMESTERCOURSESRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableLASTSEMESTERCOURSES = ((LASTSEMESTERCOURSESDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal C_ID {
-                get {
-                    return ((decimal)(this[this.tableLASTSEMESTERCOURSES.C_IDColumn]));
-                }
-                set {
-                    this[this.tableLASTSEMESTERCOURSES.C_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string C_NAME {
-                get {
-                    try {
-                        return ((string)(this[this.tableLASTSEMESTERCOURSES.C_NAMEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'LASTSEMESTERCOURSES\' 테이블의 \'C_NAME\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableLASTSEMESTERCOURSES.C_NAMEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string OPENDATE {
-                get {
-                    try {
-                        return ((string)(this[this.tableLASTSEMESTERCOURSES.OPENDATEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'LASTSEMESTERCOURSES\' 테이블의 \'OPENDATE\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableLASTSEMESTERCOURSES.OPENDATEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string CLASS_PRO {
-                get {
-                    try {
-                        return ((string)(this[this.tableLASTSEMESTERCOURSES.CLASS_PROColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'LASTSEMESTERCOURSES\' 테이블의 \'CLASS_PRO\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableLASTSEMESTERCOURSES.CLASS_PROColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsC_NAMENull() {
-                return this.IsNull(this.tableLASTSEMESTERCOURSES.C_NAMEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetC_NAMENull() {
-                this[this.tableLASTSEMESTERCOURSES.C_NAMEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsOPENDATENull() {
-                return this.IsNull(this.tableLASTSEMESTERCOURSES.OPENDATEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetOPENDATENull() {
-                this[this.tableLASTSEMESTERCOURSES.OPENDATEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCLASS_PRONull() {
-                return this.IsNull(this.tableLASTSEMESTERCOURSES.CLASS_PROColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCLASS_PRONull() {
-                this[this.tableLASTSEMESTERCOURSES.CLASS_PROColumn] = global::System.Convert.DBNull;
+                this.tableENROLLWITHNAMES = ((ENROLLWITHNAMESDataTable)(this.Table));
             }
         }
         
@@ -1494,22 +1081,22 @@ namespace DBP_final {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class COURSESRowChangeEvent : global::System.EventArgs {
+        public class ENROLLRowChangeEvent : global::System.EventArgs {
             
-            private COURSESRow eventRow;
+            private ENROLLRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public COURSESRowChangeEvent(COURSESRow row, global::System.Data.DataRowAction action) {
+            public ENROLLRowChangeEvent(ENROLLRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public COURSESRow Row {
+            public ENROLLRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1528,56 +1115,22 @@ namespace DBP_final {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class COURSEENROLLMENTCOUNTRowChangeEvent : global::System.EventArgs {
+        public class ENROLLWITHNAMESRowChangeEvent : global::System.EventArgs {
             
-            private COURSEENROLLMENTCOUNTRow eventRow;
+            private ENROLLWITHNAMESRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public COURSEENROLLMENTCOUNTRowChangeEvent(COURSEENROLLMENTCOUNTRow row, global::System.Data.DataRowAction action) {
+            public ENROLLWITHNAMESRowChangeEvent(ENROLLWITHNAMESRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public COURSEENROLLMENTCOUNTRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class LASTSEMESTERCOURSESRowChangeEvent : global::System.EventArgs {
-            
-            private LASTSEMESTERCOURSESRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public LASTSEMESTERCOURSESRowChangeEvent(LASTSEMESTERCOURSESRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public LASTSEMESTERCOURSESRow Row {
+            public ENROLLWITHNAMESRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1593,7 +1146,7 @@ namespace DBP_final {
         }
     }
 }
-namespace DBP_final.DataSet1TableAdapters {
+namespace DBP_final.DataSet3TableAdapters {
     
     
     /// <summary>
@@ -1605,7 +1158,7 @@ namespace DBP_final.DataSet1TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class COURSESTableAdapter : global::System.ComponentModel.Component {
+    public partial class ENROLLTableAdapter : global::System.ComponentModel.Component {
         
         private global::Oracle.ManagedDataAccess.Client.OracleDataAdapter _adapter;
         
@@ -1619,7 +1172,7 @@ namespace DBP_final.DataSet1TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public COURSESTableAdapter() {
+        public ENROLLTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1716,17 +1269,29 @@ namespace DBP_final.DataSet1TableAdapters {
             this._adapter = new global::Oracle.ManagedDataAccess.Client.OracleDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "COURSES";
+            tableMapping.DataSetTable = "ENROLL";
+            tableMapping.ColumnMappings.Add("S_ID", "S_ID");
             tableMapping.ColumnMappings.Add("C_ID", "C_ID");
-            tableMapping.ColumnMappings.Add("C_NAME", "C_NAME");
-            tableMapping.ColumnMappings.Add("OPENDATE", "OPENDATE");
-            tableMapping.ColumnMappings.Add("CLASS_PRO", "CLASS_PRO");
+            tableMapping.ColumnMappings.Add("EXAM_SCORE", "EXAM_SCORE");
+            tableMapping.ColumnMappings.Add("ATT_SCORE", "ATT_SCORE");
+            tableMapping.ColumnMappings.Add("ASS_SCORE1", "ASS_SCORE1");
+            tableMapping.ColumnMappings.Add("ASS_SCORE2", "ASS_SCORE2");
+            tableMapping.ColumnMappings.Add("FINAL_GRADE", "FINAL_GRADE");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""DONG1"".""COURSES"" WHERE ((""C_ID"" = :Original_C_ID) AND ((:IsNull_C_NAME = 1 AND ""C_NAME"" IS NULL) OR (""C_NAME"" = :Original_C_NAME)) AND ((:IsNull_OPENDATE = 1 AND ""OPENDATE"" IS NULL) OR (""OPENDATE"" = :Original_OPENDATE)) AND ((:IsNull_CLASS_PRO = 1 AND ""CLASS_PRO"" IS NULL) OR (""CLASS_PRO"" = :Original_CLASS_PRO)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""DONG1"".""ENROLL"" WHERE ((""S_ID"" = :Original_S_ID) AND (""C_ID"" = :Original_C_ID) AND ((:IsNull_EXAM_SCORE = 1 AND ""EXAM_SCORE"" IS NULL) OR (""EXAM_SCORE"" = :Original_EXAM_SCORE)) AND ((:IsNull_ATT_SCORE = 1 AND ""ATT_SCORE"" IS NULL) OR (""ATT_SCORE"" = :Original_ATT_SCORE)) AND ((:IsNull_ASS_SCORE1 = 1 AND ""ASS_SCORE1"" IS NULL) OR (""ASS_SCORE1"" = :Original_ASS_SCORE1)) AND ((:IsNull_ASS_SCORE2 = 1 AND ""ASS_SCORE2"" IS NULL) OR (""ASS_SCORE2"" = :Original_ASS_SCORE2)) AND ((:IsNull_FINAL_GRADE = 1 AND ""FINAL_GRADE"" IS NULL) OR (""FINAL_GRADE"" = :Original_FINAL_GRADE)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_S_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "S_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_C_ID";
             param.DbType = global::System.Data.DbType.Decimal;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
@@ -1736,65 +1301,113 @@ namespace DBP_final.DataSet1TableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_C_NAME";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "C_NAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_C_NAME";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "C_NAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_OPENDATE";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "OPENDATE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_OPENDATE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "OPENDATE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_CLASS_PRO";
+            param.ParameterName = "IsNull_EXAM_SCORE";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "CLASS_PRO";
+            param.SourceColumn = "EXAM_SCORE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_CLASS_PRO";
+            param.ParameterName = "Original_EXAM_SCORE";
             param.DbType = global::System.Data.DbType.Decimal;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "CLASS_PRO";
+            param.SourceColumn = "EXAM_SCORE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_ATT_SCORE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ATT_SCORE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_ATT_SCORE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ATT_SCORE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_ASS_SCORE1";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ASS_SCORE1";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_ASS_SCORE1";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ASS_SCORE1";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_ASS_SCORE2";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ASS_SCORE2";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_ASS_SCORE2";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ASS_SCORE2";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_FINAL_GRADE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "FINAL_GRADE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_FINAL_GRADE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "FINAL_GRADE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"DONG1\".\"COURSES\" (\"C_ID\", \"C_NAME\", \"OPENDATE\", \"CLASS_PRO\") VALUES " +
-                "(:C_ID, :C_NAME, :OPENDATE, :CLASS_PRO)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"DONG1\".\"ENROLL\" (\"S_ID\", \"C_ID\", \"EXAM_SCORE\", \"ATT_SCORE\", \"ASS_SCO" +
+                "RE1\", \"ASS_SCORE2\", \"FINAL_GRADE\") VALUES (:S_ID, :C_ID, :EXAM_SCORE, :ATT_SCORE" +
+                ", :ASS_SCORE1, :ASS_SCORE2, :FINAL_GRADE)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "S_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "S_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "C_ID";
             param.DbType = global::System.Data.DbType.Decimal;
@@ -1804,31 +1417,56 @@ namespace DBP_final.DataSet1TableAdapters {
             param.SourceColumn = "C_ID";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "C_NAME";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "C_NAME";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "OPENDATE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "OPENDATE";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "CLASS_PRO";
+            param.ParameterName = "EXAM_SCORE";
             param.DbType = global::System.Data.DbType.Decimal;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "CLASS_PRO";
+            param.SourceColumn = "EXAM_SCORE";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "ATT_SCORE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ATT_SCORE";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "ASS_SCORE1";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ASS_SCORE1";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "ASS_SCORE2";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ASS_SCORE2";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "FINAL_GRADE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "FINAL_GRADE";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""DONG1"".""COURSES"" SET ""C_ID"" = :C_ID, ""C_NAME"" = :C_NAME, ""OPENDATE"" = :OPENDATE, ""CLASS_PRO"" = :CLASS_PRO WHERE ((""C_ID"" = :Original_C_ID) AND ((:IsNull_C_NAME = 1 AND ""C_NAME"" IS NULL) OR (""C_NAME"" = :Original_C_NAME)) AND ((:IsNull_OPENDATE = 1 AND ""OPENDATE"" IS NULL) OR (""OPENDATE"" = :Original_OPENDATE)) AND ((:IsNull_CLASS_PRO = 1 AND ""CLASS_PRO"" IS NULL) OR (""CLASS_PRO"" = :Original_CLASS_PRO)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""DONG1"".""ENROLL"" SET ""S_ID"" = :S_ID, ""C_ID"" = :C_ID, ""EXAM_SCORE"" = :EXAM_SCORE, ""ATT_SCORE"" = :ATT_SCORE, ""ASS_SCORE1"" = :ASS_SCORE1, ""ASS_SCORE2"" = :ASS_SCORE2, ""FINAL_GRADE"" = :FINAL_GRADE WHERE ((""S_ID"" = :Original_S_ID) AND (""C_ID"" = :Original_C_ID) AND ((:IsNull_EXAM_SCORE = 1 AND ""EXAM_SCORE"" IS NULL) OR (""EXAM_SCORE"" = :Original_EXAM_SCORE)) AND ((:IsNull_ATT_SCORE = 1 AND ""ATT_SCORE"" IS NULL) OR (""ATT_SCORE"" = :Original_ATT_SCORE)) AND ((:IsNull_ASS_SCORE1 = 1 AND ""ASS_SCORE1"" IS NULL) OR (""ASS_SCORE1"" = :Original_ASS_SCORE1)) AND ((:IsNull_ASS_SCORE2 = 1 AND ""ASS_SCORE2"" IS NULL) OR (""ASS_SCORE2"" = :Original_ASS_SCORE2)) AND ((:IsNull_FINAL_GRADE = 1 AND ""FINAL_GRADE"" IS NULL) OR (""FINAL_GRADE"" = :Original_FINAL_GRADE)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "S_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "S_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "C_ID";
             param.DbType = global::System.Data.DbType.Decimal;
@@ -1838,26 +1476,52 @@ namespace DBP_final.DataSet1TableAdapters {
             param.SourceColumn = "C_ID";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "C_NAME";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "C_NAME";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "OPENDATE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "OPENDATE";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "CLASS_PRO";
+            param.ParameterName = "EXAM_SCORE";
             param.DbType = global::System.Data.DbType.Decimal;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "CLASS_PRO";
+            param.SourceColumn = "EXAM_SCORE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "ATT_SCORE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ATT_SCORE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "ASS_SCORE1";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ASS_SCORE1";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "ASS_SCORE2";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ASS_SCORE2";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "FINAL_GRADE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "FINAL_GRADE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_S_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "S_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_C_ID";
@@ -1869,58 +1533,97 @@ namespace DBP_final.DataSet1TableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_C_NAME";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "C_NAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_C_NAME";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "C_NAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_OPENDATE";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "OPENDATE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_OPENDATE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
-            param.IsNullable = true;
-            param.SourceColumn = "OPENDATE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_CLASS_PRO";
+            param.ParameterName = "IsNull_EXAM_SCORE";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "CLASS_PRO";
+            param.SourceColumn = "EXAM_SCORE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_CLASS_PRO";
+            param.ParameterName = "Original_EXAM_SCORE";
             param.DbType = global::System.Data.DbType.Decimal;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "CLASS_PRO";
+            param.SourceColumn = "EXAM_SCORE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_ATT_SCORE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ATT_SCORE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_ATT_SCORE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ATT_SCORE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_ASS_SCORE1";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ASS_SCORE1";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_ASS_SCORE1";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ASS_SCORE1";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_ASS_SCORE2";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ASS_SCORE2";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_ASS_SCORE2";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ASS_SCORE2";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_FINAL_GRADE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "FINAL_GRADE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_FINAL_GRADE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "FINAL_GRADE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -1935,28 +1638,25 @@ namespace DBP_final.DataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[3];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[2];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT C_ID, C_NAME, OPENDATE, CLASS_PRO FROM DONG1.COURSES";
+            this._commandCollection[0].CommandText = "SELECT S_ID, C_ID, EXAM_SCORE, ATT_SCORE, ASS_SCORE1, ASS_SCORE2, FINAL_GRADE FRO" +
+                "M DONG1.ENROLL";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT C_ID, C_NAME, OPENDATE, CLASS_PRO FROM DONG1.COURSES\r\nWHERE OPENDATE =\'202" +
-                "4-2\'";
+            this._commandCollection[1].CommandText = "SELECT \r\n    e.S_ID,\r\n    e.C_ID,\r\n    e.EXAM_SCORE,\r\n    e.ATT_SCORE,\r\n    e.ASS" +
+                "_SCORE1,\r\n    e.ASS_SCORE2,\r\n    e.FINAL_GRADE\r\nFROM \r\n    DONG1.ENROLL e\r\nJOIN " +
+                "\r\n    DONG1.COURSES c ON e.C_ID = c.C_ID\r\nWHERE \r\n    c.OPENDATE = \'2024-2\'\r\n";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT C_ID, C_NAME, OPENDATE, CLASS_PRO FROM DONG1.COURSES\r\nWHERE OPENDATE = \'20" +
-                "24-2\'";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.COURSESDataTable dataTable) {
+        public virtual int Fill(DataSet3.ENROLLDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1969,9 +1669,9 @@ namespace DBP_final.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.COURSESDataTable GetData() {
+        public virtual DataSet3.ENROLLDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.COURSESDataTable dataTable = new DataSet1.COURSESDataTable();
+            DataSet3.ENROLLDataTable dataTable = new DataSet3.ENROLLDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1980,7 +1680,7 @@ namespace DBP_final.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(DataSet1.COURSESDataTable dataTable) {
+        public virtual int FillBy(DataSet3.ENROLLDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1992,28 +1692,15 @@ namespace DBP_final.DataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy1(DataSet1.COURSESDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1.COURSESDataTable dataTable) {
+        public virtual int Update(DataSet3.ENROLLDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "COURSES");
+        public virtual int Update(DataSet3 dataSet) {
+            return this.Adapter.Update(dataSet, "ENROLL");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2035,31 +1722,48 @@ namespace DBP_final.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(decimal Original_C_ID, string Original_C_NAME, string Original_OPENDATE, global::System.Nullable<decimal> Original_CLASS_PRO) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_C_ID));
-            if ((Original_C_NAME == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+        public virtual int Delete(decimal Original_S_ID, decimal Original_C_ID, global::System.Nullable<decimal> Original_EXAM_SCORE, global::System.Nullable<decimal> Original_ATT_SCORE, global::System.Nullable<decimal> Original_ASS_SCORE1, global::System.Nullable<decimal> Original_ASS_SCORE2, string Original_FINAL_GRADE) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((decimal)(Original_S_ID));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((decimal)(Original_C_ID));
+            if ((Original_EXAM_SCORE.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((decimal)(Original_EXAM_SCORE.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_C_NAME));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Original_OPENDATE == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_OPENDATE));
-            }
-            if ((Original_CLASS_PRO.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((decimal)(Original_CLASS_PRO.Value));
+            if ((Original_ATT_SCORE.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((decimal)(Original_ATT_SCORE.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ASS_SCORE1.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((decimal)(Original_ASS_SCORE1.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ASS_SCORE2.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((decimal)(Original_ASS_SCORE2.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Original_FINAL_GRADE == null)) {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_FINAL_GRADE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2081,25 +1785,38 @@ namespace DBP_final.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(decimal C_ID, string C_NAME, string OPENDATE, global::System.Nullable<decimal> CLASS_PRO) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(C_ID));
-            if ((C_NAME == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+        public virtual int Insert(decimal S_ID, decimal C_ID, global::System.Nullable<decimal> EXAM_SCORE, global::System.Nullable<decimal> ATT_SCORE, global::System.Nullable<decimal> ASS_SCORE1, global::System.Nullable<decimal> ASS_SCORE2, string FINAL_GRADE) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((decimal)(S_ID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(C_ID));
+            if ((EXAM_SCORE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(EXAM_SCORE.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(C_NAME));
-            }
-            if ((OPENDATE == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(OPENDATE));
-            }
-            if ((CLASS_PRO.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(CLASS_PRO.Value));
+            if ((ATT_SCORE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(ATT_SCORE.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((ASS_SCORE1.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((decimal)(ASS_SCORE1.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((ASS_SCORE2.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(ASS_SCORE2.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((FINAL_GRADE == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(FINAL_GRADE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2121,50 +1838,80 @@ namespace DBP_final.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(decimal C_ID, string C_NAME, string OPENDATE, global::System.Nullable<decimal> CLASS_PRO, decimal Original_C_ID, string Original_C_NAME, string Original_OPENDATE, global::System.Nullable<decimal> Original_CLASS_PRO) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(C_ID));
-            if ((C_NAME == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+        public virtual int Update(decimal S_ID, decimal C_ID, global::System.Nullable<decimal> EXAM_SCORE, global::System.Nullable<decimal> ATT_SCORE, global::System.Nullable<decimal> ASS_SCORE1, global::System.Nullable<decimal> ASS_SCORE2, string FINAL_GRADE, decimal Original_S_ID, decimal Original_C_ID, global::System.Nullable<decimal> Original_EXAM_SCORE, global::System.Nullable<decimal> Original_ATT_SCORE, global::System.Nullable<decimal> Original_ASS_SCORE1, global::System.Nullable<decimal> Original_ASS_SCORE2, string Original_FINAL_GRADE) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((decimal)(S_ID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(C_ID));
+            if ((EXAM_SCORE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(EXAM_SCORE.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(C_NAME));
-            }
-            if ((OPENDATE == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(OPENDATE));
-            }
-            if ((CLASS_PRO.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(CLASS_PRO.Value));
+            if ((ATT_SCORE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(ATT_SCORE.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(Original_C_ID));
-            if ((Original_C_NAME == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+            if ((ASS_SCORE1.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(ASS_SCORE1.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((ASS_SCORE2.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(ASS_SCORE2.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((FINAL_GRADE == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_C_NAME));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(FINAL_GRADE));
             }
-            if ((Original_OPENDATE == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_OPENDATE));
-            }
-            if ((Original_CLASS_PRO.HasValue == true)) {
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(Original_S_ID));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(Original_C_ID));
+            if ((Original_EXAM_SCORE.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(Original_CLASS_PRO.Value));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(Original_EXAM_SCORE.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ATT_SCORE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(Original_ATT_SCORE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ASS_SCORE1.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((decimal)(Original_ASS_SCORE1.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ASS_SCORE2.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((decimal)(Original_ASS_SCORE2.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Original_FINAL_GRADE == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_FINAL_GRADE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2186,8 +1933,8 @@ namespace DBP_final.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string C_NAME, string OPENDATE, global::System.Nullable<decimal> CLASS_PRO, decimal Original_C_ID, string Original_C_NAME, string Original_OPENDATE, global::System.Nullable<decimal> Original_CLASS_PRO) {
-            return this.Update(Original_C_ID, C_NAME, OPENDATE, CLASS_PRO, Original_C_ID, Original_C_NAME, Original_OPENDATE, Original_CLASS_PRO);
+        public virtual int Update(global::System.Nullable<decimal> EXAM_SCORE, global::System.Nullable<decimal> ATT_SCORE, global::System.Nullable<decimal> ASS_SCORE1, global::System.Nullable<decimal> ASS_SCORE2, string FINAL_GRADE, decimal Original_S_ID, decimal Original_C_ID, global::System.Nullable<decimal> Original_EXAM_SCORE, global::System.Nullable<decimal> Original_ATT_SCORE, global::System.Nullable<decimal> Original_ASS_SCORE1, global::System.Nullable<decimal> Original_ASS_SCORE2, string Original_FINAL_GRADE) {
+            return this.Update(Original_S_ID, Original_C_ID, EXAM_SCORE, ATT_SCORE, ASS_SCORE1, ASS_SCORE2, FINAL_GRADE, Original_S_ID, Original_C_ID, Original_EXAM_SCORE, Original_ATT_SCORE, Original_ASS_SCORE1, Original_ASS_SCORE2, Original_FINAL_GRADE);
         }
     }
     
@@ -2200,7 +1947,7 @@ namespace DBP_final.DataSet1TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class COURSEENROLLMENTCOUNTTableAdapter : global::System.ComponentModel.Component {
+    public partial class ENROLLWITHNAMESTableAdapter : global::System.ComponentModel.Component {
         
         private global::Oracle.ManagedDataAccess.Client.OracleDataAdapter _adapter;
         
@@ -2214,7 +1961,7 @@ namespace DBP_final.DataSet1TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public COURSEENROLLMENTCOUNTTableAdapter() {
+        public ENROLLWITHNAMESTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -2309,12 +2056,6 @@ namespace DBP_final.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitAdapter() {
             this._adapter = new global::Oracle.ManagedDataAccess.Client.OracleDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "COURSEENROLLMENTCOUNT";
-            tableMapping.ColumnMappings.Add("과목명", "과목명");
-            tableMapping.ColumnMappings.Add("신청인원수", "신청인원수");
-            this._adapter.TableMappings.Add(tableMapping);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2330,7 +2071,8 @@ namespace DBP_final.DataSet1TableAdapters {
             this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT 과목명, 신청인원수 FROM DONG1.COURSEENROLLMENTCOUNT";
+            this._commandCollection[0].CommandText = "SELECT 학생이름, 과목명, EXAM_SCORE, ATT_SCORE, ASS_SCORE1, ASS_SCORE2, FINAL_GRADE FROM" +
+                " DONG1.ENROLLWITHNAMES";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2338,7 +2080,7 @@ namespace DBP_final.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.COURSEENROLLMENTCOUNTDataTable dataTable) {
+        public virtual int Fill(DataSet3.ENROLLWITHNAMESDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2351,179 +2093,9 @@ namespace DBP_final.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.COURSEENROLLMENTCOUNTDataTable GetData() {
+        public virtual DataSet3.ENROLLWITHNAMESDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.COURSEENROLLMENTCOUNTDataTable dataTable = new DataSet1.COURSEENROLLMENTCOUNTDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class LASTSEMESTERCOURSESTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::Oracle.ManagedDataAccess.Client.OracleDataAdapter _adapter;
-        
-        private global::Oracle.ManagedDataAccess.Client.OracleConnection _connection;
-        
-        private global::Oracle.ManagedDataAccess.Client.OracleTransaction _transaction;
-        
-        private global::Oracle.ManagedDataAccess.Client.OracleCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public LASTSEMESTERCOURSESTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected internal global::Oracle.ManagedDataAccess.Client.OracleDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::Oracle.ManagedDataAccess.Client.OracleConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::Oracle.ManagedDataAccess.Client.OracleCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::Oracle.ManagedDataAccess.Client.OracleTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected global::Oracle.ManagedDataAccess.Client.OracleCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::Oracle.ManagedDataAccess.Client.OracleDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "LASTSEMESTERCOURSES";
-            tableMapping.ColumnMappings.Add("C_ID", "C_ID");
-            tableMapping.ColumnMappings.Add("C_NAME", "C_NAME");
-            tableMapping.ColumnMappings.Add("OPENDATE", "OPENDATE");
-            tableMapping.ColumnMappings.Add("CLASS_PRO", "CLASS_PRO");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::Oracle.ManagedDataAccess.Client.OracleConnection();
-            this._connection.ConnectionString = global::DBP_final.Properties.Settings.Default.ConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
-            this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT C_ID, C_NAME, OPENDATE, CLASS_PRO FROM DONG1.LASTSEMESTERCOURSES";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.LASTSEMESTERCOURSESDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.LASTSEMESTERCOURSESDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.LASTSEMESTERCOURSESDataTable dataTable = new DataSet1.LASTSEMESTERCOURSESDataTable();
+            DataSet3.ENROLLWITHNAMESDataTable dataTable = new DataSet3.ENROLLWITHNAMESDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2541,7 +2113,7 @@ namespace DBP_final.DataSet1TableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private COURSESTableAdapter _cOURSESTableAdapter;
+        private ENROLLTableAdapter _eNROLLTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -2563,12 +2135,12 @@ namespace DBP_final.DataSet1TableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public COURSESTableAdapter COURSESTableAdapter {
+        public ENROLLTableAdapter ENROLLTableAdapter {
             get {
-                return this._cOURSESTableAdapter;
+                return this._eNROLLTableAdapter;
             }
             set {
-                this._cOURSESTableAdapter = value;
+                this._eNROLLTableAdapter = value;
             }
         }
         
@@ -2591,9 +2163,9 @@ namespace DBP_final.DataSet1TableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._cOURSESTableAdapter != null) 
-                            && (this._cOURSESTableAdapter.Connection != null))) {
-                    return this._cOURSESTableAdapter.Connection;
+                if (((this._eNROLLTableAdapter != null) 
+                            && (this._eNROLLTableAdapter.Connection != null))) {
+                    return this._eNROLLTableAdapter.Connection;
                 }
                 return null;
             }
@@ -2608,7 +2180,7 @@ namespace DBP_final.DataSet1TableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._cOURSESTableAdapter != null)) {
+                if ((this._eNROLLTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -2620,14 +2192,14 @@ namespace DBP_final.DataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._cOURSESTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.COURSES.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._eNROLLTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ENROLL.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._cOURSESTableAdapter.Update(updatedRows));
+                    result = (result + this._eNROLLTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -2639,13 +2211,13 @@ namespace DBP_final.DataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._cOURSESTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.COURSES.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._eNROLLTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ENROLL.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._cOURSESTableAdapter.Update(addedRows));
+                    result = (result + this._eNROLLTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -2657,13 +2229,13 @@ namespace DBP_final.DataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DataSet3 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._cOURSESTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.COURSES.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._eNROLLTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ENROLL.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._cOURSESTableAdapter.Update(deletedRows));
+                    result = (result + this._eNROLLTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -2699,15 +2271,15 @@ namespace DBP_final.DataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(DataSet1 dataSet) {
+        public virtual int UpdateAll(DataSet3 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._cOURSESTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._cOURSESTableAdapter.Connection) == false))) {
+            if (((this._eNROLLTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._eNROLLTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("TableAdapterManager에서 관리하는 모든 TableAdapter에는 동일한 연결 문자열을 사용해야 합니다.");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
@@ -2741,13 +2313,13 @@ namespace DBP_final.DataSet1TableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._cOURSESTableAdapter != null)) {
-                    revertConnections.Add(this._cOURSESTableAdapter, this._cOURSESTableAdapter.Connection);
-                    this._cOURSESTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(workConnection));
-                    this._cOURSESTableAdapter.Transaction = ((global::Oracle.ManagedDataAccess.Client.OracleTransaction)(workTransaction));
-                    if (this._cOURSESTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._cOURSESTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._cOURSESTableAdapter.Adapter);
+                if ((this._eNROLLTableAdapter != null)) {
+                    revertConnections.Add(this._eNROLLTableAdapter, this._eNROLLTableAdapter.Connection);
+                    this._eNROLLTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(workConnection));
+                    this._eNROLLTableAdapter.Transaction = ((global::Oracle.ManagedDataAccess.Client.OracleTransaction)(workTransaction));
+                    if (this._eNROLLTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._eNROLLTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._eNROLLTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -2808,9 +2380,9 @@ namespace DBP_final.DataSet1TableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._cOURSESTableAdapter != null)) {
-                    this._cOURSESTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._cOURSESTableAdapter]));
-                    this._cOURSESTableAdapter.Transaction = null;
+                if ((this._eNROLLTableAdapter != null)) {
+                    this._eNROLLTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._eNROLLTableAdapter]));
+                    this._eNROLLTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

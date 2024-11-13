@@ -40,6 +40,7 @@
             this.lblTitleChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconButton();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
@@ -49,6 +50,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
+            this.panel1.Controls.Add(this.iconButton5);
             this.panel1.Controls.Add(this.iconButton4);
             this.panel1.Controls.Add(this.iconButton3);
             this.panel1.Controls.Add(this.iconButton2);
@@ -66,6 +68,7 @@
             this.iconButton4.Dock = System.Windows.Forms.DockStyle.Top;
             this.iconButton4.FlatAppearance.BorderSize = 0;
             this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton4.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.iconButton4.ForeColor = System.Drawing.Color.White;
             this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Cube;
             this.iconButton4.IconColor = System.Drawing.Color.White;
@@ -77,7 +80,7 @@
             this.iconButton4.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.iconButton4.Size = new System.Drawing.Size(200, 60);
             this.iconButton4.TabIndex = 4;
-            this.iconButton4.Text = "4";
+            this.iconButton4.Text = "성적표 조회";
             this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton4.UseVisualStyleBackColor = true;
@@ -88,6 +91,7 @@
             this.iconButton3.Dock = System.Windows.Forms.DockStyle.Top;
             this.iconButton3.FlatAppearance.BorderSize = 0;
             this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.iconButton3.ForeColor = System.Drawing.Color.White;
             this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Cube;
             this.iconButton3.IconColor = System.Drawing.Color.White;
@@ -99,7 +103,7 @@
             this.iconButton3.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.iconButton3.Size = new System.Drawing.Size(200, 60);
             this.iconButton3.TabIndex = 3;
-            this.iconButton3.Text = "3";
+            this.iconButton3.Text = "성적";
             this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton3.UseVisualStyleBackColor = true;
@@ -110,6 +114,7 @@
             this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
             this.iconButton2.FlatAppearance.BorderSize = 0;
             this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.iconButton2.ForeColor = System.Drawing.Color.White;
             this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Cube;
             this.iconButton2.IconColor = System.Drawing.Color.White;
@@ -121,7 +126,7 @@
             this.iconButton2.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.iconButton2.Size = new System.Drawing.Size(200, 60);
             this.iconButton2.TabIndex = 2;
-            this.iconButton2.Text = "2";
+            this.iconButton2.Text = "등록";
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = true;
@@ -132,6 +137,7 @@
             this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
             this.iconButton1.FlatAppearance.BorderSize = 0;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.iconButton1.ForeColor = System.Drawing.Color.White;
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Cube;
             this.iconButton1.IconColor = System.Drawing.Color.White;
@@ -143,7 +149,7 @@
             this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.iconButton1.Size = new System.Drawing.Size(200, 60);
             this.iconButton1.TabIndex = 1;
-            this.iconButton1.Text = "지난학기";
+            this.iconButton1.Text = "지난학기 조회";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = true;
@@ -217,6 +223,29 @@
             this.panelDesktop.TabIndex = 3;
             this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
+            // iconButton5
+            // 
+            this.iconButton5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton5.FlatAppearance.BorderSize = 0;
+            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton5.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.iconButton5.ForeColor = System.Drawing.Color.White;
+            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Cube;
+            this.iconButton5.IconColor = System.Drawing.Color.White;
+            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton5.IconSize = 32;
+            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton5.Location = new System.Drawing.Point(0, 380);
+            this.iconButton5.Name = "iconButton5";
+            this.iconButton5.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconButton5.Size = new System.Drawing.Size(200, 60);
+            this.iconButton5.TabIndex = 5;
+            this.iconButton5.Text = "통계";
+            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton5.UseVisualStyleBackColor = true;
+            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -250,5 +279,6 @@
         private FontAwesome.Sharp.IconButton iconCurrentChildForm;
         private System.Windows.Forms.Label lblTitleChildForm;
         private System.Windows.Forms.Panel panelDesktop;
+        private FontAwesome.Sharp.IconButton iconButton5;
     }
 }

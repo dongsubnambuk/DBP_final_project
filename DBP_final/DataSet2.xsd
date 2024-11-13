@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet2" targetNamespace="http://tempuri.org/DataSet2.xsd" xmlns:mstns="http://tempuri.org/DataSet2.xsd" xmlns="http://tempuri.org/DataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" ParameterPrefix=":" PropertyReference="ApplicationSettings.DBP_final.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="Oracle.ManagedDataAccess.Client" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="COURSESWITHPROFESSORNAMETableAdapter" GeneratorDataComponentClassName="COURSESWITHPROFESSORNAMETableAdapter" Name="COURSESWITHPROFESSORNAME" UserDataComponentName="COURSESWITHPROFESSORNAMETableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="DONG1.COURSESWITHPROFESSORNAME" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT C_ID, C_NAME, OPENDATE, CLASS_PRO_NAME FROM DONG1.COURSESWITHPROFESSORNAME</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="C_ID" DataSetColumn="C_ID" />
+              <Mapping SourceColumn="C_NAME" DataSetColumn="C_NAME" />
+              <Mapping SourceColumn="OPENDATE" DataSetColumn="OPENDATE" />
+              <Mapping SourceColumn="CLASS_PRO_NAME" DataSetColumn="CLASS_PRO_NAME" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="DONG1.COURSESWITHPROFESSORNAME" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT C_ID, C_NAME, OPENDATE, CLASS_PRO_NAME FROM DONG1.COURSESWITHPROFESSORNAME
+WHERE OPENDATE = '2024-2'</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSet2" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSet2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="COURSESWITHPROFESSORNAME" msprop:Generator_RowClassName="COURSESWITHPROFESSORNAMERow" msprop:Generator_RowEvHandlerName="COURSESWITHPROFESSORNAMERowChangeEventHandler" msprop:Generator_RowDeletedName="COURSESWITHPROFESSORNAMERowDeleted" msprop:Generator_RowDeletingName="COURSESWITHPROFESSORNAMERowDeleting" msprop:Generator_RowEvArgName="COURSESWITHPROFESSORNAMERowChangeEvent" msprop:Generator_TablePropName="COURSESWITHPROFESSORNAME" msprop:Generator_RowChangedName="COURSESWITHPROFESSORNAMERowChanged" msprop:Generator_UserTableName="COURSESWITHPROFESSORNAME" msprop:Generator_RowChangingName="COURSESWITHPROFESSORNAMERowChanging" msprop:Generator_TableClassName="COURSESWITHPROFESSORNAMEDataTable" msprop:Generator_TableVarName="tableCOURSESWITHPROFESSORNAME">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="C_ID" msprop:Generator_UserColumnName="C_ID" msprop:Generator_ColumnPropNameInTable="C_IDColumn" msprop:Generator_ColumnPropNameInRow="C_ID" msprop:Generator_ColumnVarNameInTable="columnC_ID" type="xs:decimal" />
+              <xs:element name="C_NAME" msprop:Generator_UserColumnName="C_NAME" msprop:Generator_ColumnPropNameInTable="C_NAMEColumn" msprop:Generator_ColumnPropNameInRow="C_NAME" msprop:Generator_ColumnVarNameInTable="columnC_NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OPENDATE" msprop:Generator_UserColumnName="OPENDATE" msprop:Generator_ColumnPropNameInTable="OPENDATEColumn" msprop:Generator_ColumnPropNameInRow="OPENDATE" msprop:Generator_ColumnVarNameInTable="columnOPENDATE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CLASS_PRO_NAME" msprop:Generator_UserColumnName="CLASS_PRO_NAME" msprop:Generator_ColumnPropNameInTable="CLASS_PRO_NAMEColumn" msprop:Generator_ColumnPropNameInRow="CLASS_PRO_NAME" msprop:Generator_ColumnVarNameInTable="columnCLASS_PRO_NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
