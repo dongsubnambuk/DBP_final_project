@@ -166,6 +166,12 @@
     <Compile Include="StudentForm.Designer.cs">
       <DependentUpon>StudentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentGradeVeiw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentGradeVeiw.Designer.cs">
+      <DependentUpon>StudentGradeVeiw.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminChart.resx">
       <DependentUpon>AdminChart.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,6 +204,9 @@
     </Compile>
     <EmbeddedResource Include="StudentForm.resx">
       <DependentUpon>StudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentGradeVeiw.resx">
+      <DependentUpon>StudentGradeVeiw.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>

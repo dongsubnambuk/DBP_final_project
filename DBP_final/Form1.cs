@@ -74,7 +74,7 @@ namespace DBP_final
                     if (reader.Read())
                     {
                         // 학생 폼 열기
-                        StudentForm studentForm = new StudentForm();
+                        StudentForm studentForm = new StudentForm(userID);
                         studentForm.Show();
                         this.Hide();
                     }
