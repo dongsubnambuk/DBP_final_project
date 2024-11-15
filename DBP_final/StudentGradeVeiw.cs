@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
@@ -39,7 +40,7 @@ namespace DBP_final
 
         }
 
-      
+
         private void LoadStudentGrades(string semester, bool detailed)
         {
             listBox1.Items.Clear(); // 기존 데이터 초기화
@@ -50,13 +51,78 @@ namespace DBP_final
                 {
                     conn.Open();
 
-                    string opendateFilter = semester == "1학기" ? "2024-1" : semester == "2학기" ? "2024-2" : "전체";
+                    string opendateFilter = "";
+                    if (semester == "1학기")
+                    {
+                        opendateFilter = "2024-1";
+                    }
+                    else if (semester == "2학기")
+                    {
+                        opendateFilter = "2024-2";
+                    }
 
+                    // 성적 미처리 학기 확인
+                    if (semester != "전체")
+                    {
+                        string checkQuery = @"SELECT COUNT(*) AS MissingGrades
+                                      FROM ENROLL E 
+                                      JOIN COURSES C ON E.C_ID = C.C_ID 
+                                      WHERE E.S_ID = :studentId 
+                                      AND C.OPENDATE = :opendateFilter 
+                                      AND E.FINAL_GRADE IS NULL";
+
+                        using (OracleCommand checkCmd = new OracleCommand(checkQuery, conn))
+                        {
+                            checkCmd.Parameters.Add(new OracleParameter("studentId", studentId));
+                            checkCmd.Parameters.Add(new OracleParameter("opendateFilter", opendateFilter));
+
+                            int missingGrades = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                            if (missingGrades > 0)
+                            {
+                                MessageBox.Show($"선택한 학기({semester})에 성적 처리가 완료되지 않은 과목이 있습니다. 성적 처리가 완료된 후 조회 가능합니다.", "성적 처리 중", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                return;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        // "전체" 선택 시 처리되지 않은 학기가 있는지 확인
+                        string checkAllQuery = @"SELECT C.OPENDATE
+                                         FROM ENROLL E 
+                                         JOIN COURSES C ON E.C_ID = C.C_ID 
+                                         WHERE E.S_ID = :studentId 
+                                         AND E.FINAL_GRADE IS NULL 
+                                         GROUP BY C.OPENDATE";
+
+                        using (OracleCommand checkAllCmd = new OracleCommand(checkAllQuery, conn))
+                        {
+                            checkAllCmd.Parameters.Add(new OracleParameter("studentId", studentId));
+                            OracleDataReader checkAllReader = checkAllCmd.ExecuteReader();
+
+                            List<string> pendingSemesters = new List<string>();
+
+                            while (checkAllReader.Read())
+                            {
+                                pendingSemesters.Add(checkAllReader["OPENDATE"].ToString());
+                            }
+
+                            if (pendingSemesters.Count > 0)
+                            {
+                                string pendingMessage = "성적 처리가 완료되지 않은 학기가 있습니다. 해당 학기로 조회해 주세요:\n" +
+                                                        string.Join(", ", pendingSemesters);
+                                MessageBox.Show(pendingMessage, "성적 처리 중", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                return;
+                            }
+                        }
+                    }
+
+                    // 성적 조회 쿼리 작성
                     string query = detailed ?
                         "SELECT C.C_NAME, E.EXAM_SCORE, E.ATT_SCORE, E.ASS_SCORE1, E.ASS_SCORE2, E.FINAL_GRADE, C.OPENDATE " +
-                        "FROM DONG1.ENROLL E JOIN DONG1.COURSES C ON E.C_ID = C.C_ID WHERE E.S_ID = :studentId" :
+                        "FROM ENROLL E JOIN COURSES C ON E.C_ID = C.C_ID WHERE E.S_ID = :studentId" :
                         "SELECT C.C_NAME, E.FINAL_GRADE, C.OPENDATE " +
-                        "FROM DONG1.ENROLL E JOIN DONG1.COURSES C ON E.C_ID = C.C_ID WHERE E.S_ID = :studentId";
+                        "FROM ENROLL E JOIN COURSES C ON E.C_ID = C.C_ID WHERE E.S_ID = :studentId";
 
                     if (semester != "전체")
                     {
@@ -111,6 +177,7 @@ namespace DBP_final
         }
 
 
+
         private void button1_Click_1(object sender, EventArgs e)
         {
             // 콤보박스와 체크박스 값 확인
@@ -128,6 +195,11 @@ namespace DBP_final
         {
             string selectedSemester = comboBox1.SelectedItem.ToString();
             LoadStudentGrades(selectedSemester, detailed: true); // 상세 성적표
+        }
+
+        private void StudentGradeView_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
     }

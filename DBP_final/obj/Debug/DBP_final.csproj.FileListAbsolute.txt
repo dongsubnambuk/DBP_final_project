@@ -43,3 +43,4 @@ C:\Users\user\Desktop\DBP_final\DBP_final\obj\Debug\DBP_final.AdminGradeReport.r
 C:\Users\user\Desktop\DBP_final\DBP_final\obj\Debug\DBP_final.통계.resources
 C:\Users\user\Desktop\DBP_final\DBP_final\obj\Debug\DBP_final.StudentGradeView.resources
 C:\Users\user\Desktop\DBP_final\DBP_final\obj\Debug\DBP_final.StudentEnroll.resources
+C:\Users\user\Desktop\DBP_final\DBP_final\obj\Debug\DBP_final.StudentClassView.resources

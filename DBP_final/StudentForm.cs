@@ -1,4 +1,5 @@
 ﻿using FontAwesome.Sharp;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,12 +37,13 @@ namespace DBP_final
 
         private struct RGBcolors
         {
-            public static Color color1 = Color.FromArgb(172, 126, 241);
-            public static Color color2 = Color.FromArgb(249, 118, 176);
-            public static Color color3 = Color.FromArgb(253, 138, 114);
-            public static Color color4 = Color.FromArgb(95, 77, 221);
-            public static Color color5 = Color.FromArgb(249, 88, 155);
-            public static Color color6 = Color.FromArgb(24, 161, 251);
+
+            public static Color color1 = Color.FromArgb(44, 62, 80);
+            public static Color color2 = Color.FromArgb(142, 140, 167);
+            public static Color color3 = Color.FromArgb(52, 73, 94);
+            public static Color color4 = Color.FromArgb(133, 173, 205);
+            public static Color color5 = Color.FromArgb(171, 196, 171);
+            public static Color color6 = Color.FromArgb(130, 158, 158);
         }
 
 
@@ -51,7 +53,7 @@ namespace DBP_final
             {
                 DisableButton();
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(92, 68, 136);
+                currentBtn.BackColor = Color.FromArgb(255, 150, 150);
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
@@ -75,7 +77,7 @@ namespace DBP_final
             if (currentBtn != null)
             {
 
-                currentBtn.BackColor = Color.FromArgb(116, 86, 174);
+                currentBtn.BackColor = Color.FromArgb(255, 127, 127);
                 currentBtn.ForeColor = Color.White;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = Color.White;
@@ -129,7 +131,10 @@ namespace DBP_final
 
         private void StudentForm_Load(object sender, EventArgs e)
         {
-
+          
+            LoadStudentName();
+            timer1.Interval = 1000; //1초마다 깜빡임
+            timer1.Start();
         }
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -144,7 +149,7 @@ namespace DBP_final
 
             iconCurrentChildForm.IconChar = IconChar.House;
             iconCurrentChildForm.IconColor = Color.MediumPurple;
-            lblTitleChildForm.Text = "Home";
+            lblTitleChildForm.Text = "Students";
         }
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -173,21 +178,71 @@ namespace DBP_final
         //강의 시간표조회
         private void iconButton2_Click_1(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBcolors.color2);
-            OpenChildForm(new StudentEnroll());
+            ActivateButton(sender, RGBcolors.color3);
+            OpenChildForm(new StudentClassView());
         }
 
 
         //수강신청
         private void iconButton3_Click_1(object sender, EventArgs e)
         {
-
+            ActivateButton(sender, RGBcolors.color2);
+            OpenChildForm(new StudentEnroll(studentId));
         }
 
 
         private void iconButton4_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            // Form1으로 이동
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Close(); // 현재 창 닫기
+        }
+
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void LoadStudentName()
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection("User Id=DONG1; Password=sds@258079; Data Source=localhost:1521/xepdb1"))
+                {
+                    conn.Open();
+
+                    string query = "SELECT S_NAME FROM STUDENTS WHERE S_ID = :studentId";
+                    using (OracleCommand cmd = new OracleCommand(query, conn))
+                    {
+                        cmd.Parameters.Add(new OracleParameter("studentId", studentId));
+
+                        OracleDataReader reader = cmd.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            label2.Text = reader["S_NAME"].ToString(); // label2에 학생 이름 표시
+                        }
+                        else
+                        {
+                            label2.Text = "학생 정보를 찾을 수 없습니다.";
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("학생 이름 로드 중 오류가 발생했습니다: " + ex.Message);
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label3.Visible=!label3.Visible;
         }
     }
 }

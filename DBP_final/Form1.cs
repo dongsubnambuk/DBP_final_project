@@ -40,48 +40,75 @@ namespace DBP_final
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string userID = textBox1.Text;
-            string password = textBox2.Text;
+            string userID = textBox1.Text.Trim();
+            string password = textBox2.Text.Trim();
 
-            // 패스워드 고정
+            // 아이디와 패스워드 입력 확인
+            if (string.IsNullOrEmpty(userID))
+            {
+                MessageBox.Show("아이디를 입력해 주세요.");
+                return;
+            }
+            if (string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("패스워드를 입력해 주세요.");
+                return;
+            }
+
+            // 패스워드가 고정된 값인지 확인
             if (password == "qwer1234")
             {
-                // 관리자인 경우 (교수 인사번호)
-                oracleCommand1.CommandText = $"SELECT * FROM PROFESSORS WHERE P_ID = {userID}";
-                OracleDataReader reader = oracleCommand1.ExecuteReader();
-                if (reader.Read())
+                try
                 {
-                    string isAdmin = reader["IS_ADMIN"].ToString();
+                    // 관리자인 경우 (교수 인사번호)
+                    oracleCommand1.CommandText = $"SELECT * FROM PROFESSORS WHERE P_ID = :userID";
+                    oracleCommand1.Parameters.Clear();
+                    oracleCommand1.Parameters.Add(new OracleParameter("userID", userID));
 
-                    if (isAdmin == "Y")
-                    {
-                        // 관리자 폼 열기
-                        AdminForm adminForm = new AdminForm();
-                        adminForm.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        // 권한이 없는 경우
-                        MessageBox.Show("권한이 없습니다.");
-                    }
-                }
-                else
-                {
-                    // 학생인 경우 (학번)
-                    oracleCommand1.CommandText = $"SELECT * FROM STUDENTS WHERE S_ID = {userID}";
-                    reader = oracleCommand1.ExecuteReader();
+                    OracleDataReader reader = oracleCommand1.ExecuteReader();
+
                     if (reader.Read())
                     {
-                        // 학생 폼 열기
-                        StudentForm studentForm = new StudentForm(userID);
-                        studentForm.Show();
-                        this.Hide();
+                        string isAdmin = reader["IS_ADMIN"].ToString();
+
+                        if (isAdmin == "Y")
+                        {
+                            // 관리자 폼 열기
+                            AdminForm adminForm = new AdminForm(userID);
+                            adminForm.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            // 권한이 없는 경우
+                            MessageBox.Show("권한이 없습니다.");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("로그인 정보가 올바르지 않습니다.");
+                        // 학생인 경우 (학번)
+                        oracleCommand1.CommandText = $"SELECT * FROM STUDENTS WHERE S_ID = :userID";
+                        oracleCommand1.Parameters.Clear();
+                        oracleCommand1.Parameters.Add(new OracleParameter("userID", userID));
+
+                        reader = oracleCommand1.ExecuteReader();
+
+                        if (reader.Read())
+                        {
+                            // 학생 폼 열기
+                            StudentForm studentForm = new StudentForm(userID);
+                            studentForm.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("로그인 정보가 올바르지 않습니다.");
+                        }
                     }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("로그인 처리 중 오류가 발생했습니다: " + ex.Message);
                 }
             }
             else
@@ -89,6 +116,7 @@ namespace DBP_final
                 MessageBox.Show("패스워드가 올바르지 않습니다.");
             }
         }
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

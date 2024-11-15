@@ -1,4 +1,5 @@
 ﻿using FontAwesome.Sharp;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,14 +17,16 @@ namespace DBP_final
 {
     public partial class AdminForm : Form
     {
-
+        private Timer timer;
+        private string adminId;
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
 
-        public AdminForm()
+        public AdminForm(string adminId)
         {
             InitializeComponent();
+            InitializeTimer();
 
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
@@ -32,17 +35,31 @@ namespace DBP_final
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
-            this.MaximizedBounds=Screen.FromHandle(this.Handle).WorkingArea;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            this.adminId = adminId; 
         }
 
+        private void InitializeTimer()
+        {
+            timer = new Timer();
+            timer.Interval = 1000; // 1초마다 업데이트
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            label1.Text = DateTime.Now.ToString(" HH:mm:ss"); // 현재 시간을 "연-월-일 시:분:초" 형식으로 표시
+            label3.Text = DateTime.Now.ToString(" yyyy년MM월dd일"); // 현재 시간을 "연-월-일 시:분:초" 형식으로 표시
+        }
         private struct RGBcolors
         {
-            public static Color color1 = Color.FromArgb(172, 126, 241);
-            public static Color color2 = Color.FromArgb(249, 118, 176);
-            public static Color color3 = Color.FromArgb(253, 138, 114);
-            public static Color color4 = Color.FromArgb(95, 77, 221);
-            public static Color color5 = Color.FromArgb(249, 88, 155);
-            public static Color color6 = Color.FromArgb(24, 161, 251);
+            public static Color color1 = Color.FromArgb(44, 62, 80);
+            public static Color color2 = Color.FromArgb(142, 140, 167);
+            public static Color color3 = Color.FromArgb(52, 73, 94);
+            public static Color color4 = Color.FromArgb(133, 173, 205);
+            public static Color color5 = Color.FromArgb(171, 196, 171);
+            public static Color color6 = Color.FromArgb(130, 158, 158);
         }
 
         private void ActivateButton(object senderBtn, Color color)
@@ -51,7 +68,7 @@ namespace DBP_final
             {
                 DisableButton();
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(92, 68, 136);
+                currentBtn.BackColor = Color.FromArgb(255, 150, 150);
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
@@ -75,7 +92,7 @@ namespace DBP_final
             if (currentBtn != null)
             {
 
-                currentBtn.BackColor = Color.FromArgb(116, 86, 174);
+                currentBtn.BackColor = Color.FromArgb(255, 127, 127);
                 currentBtn.ForeColor = Color.White;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = Color.White;
@@ -103,7 +120,7 @@ namespace DBP_final
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
-
+            LoadAdminName();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -185,5 +202,47 @@ namespace DBP_final
             ActivateButton(sender, RGBcolors.color5);
             OpenChildForm(new 통계());
         }
+
+
+
+        private void LoadAdminName()
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection("User Id=DONG1; Password=sds@258079; Data Source=localhost:1521/xepdb1"))
+                {
+                    conn.Open();
+
+                    string query = "SELECT P_NAME FROM PROFESSORS WHERE P_ID = :adminId";
+                    using (OracleCommand cmd = new OracleCommand(query, conn))
+                    {
+                        cmd.Parameters.Add(new OracleParameter("adminId", adminId));
+
+                        OracleDataReader reader = cmd.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            label2.Text = reader["P_NAME"].ToString(); // label2에 학생 이름 표시
+                        }
+                        else
+                        {
+                            label2.Text = "관리자 정보를 찾을 수 없습니다.";
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("관리자 이름 로드 중 오류가 발생했습니다: " + ex.Message);
+            }
+        }
+
+        private void iconButton6_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Close(); // 현재 창 닫기
+        }
+
+
     }
 }
