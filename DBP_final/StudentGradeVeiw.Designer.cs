@@ -31,6 +31,8 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -49,32 +51,55 @@
             "전체",
             "1학기",
             "2학기"});
-            this.comboBox1.Location = new System.Drawing.Point(459, 66);
+            this.comboBox1.Location = new System.Drawing.Point(185, 66);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
+            this.comboBox1.Size = new System.Drawing.Size(118, 20);
             this.comboBox1.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(334, 66);
+            this.button1.Location = new System.Drawing.Point(59, 47);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(120, 39);
             this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
+            this.button1.Text = "조회하기";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(186, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "학기선택";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(630, 95);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 39);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "자세히 보기";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // StudentGradeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.listBox1);
             this.Name = "StudentGradeView";
             this.Text = "지난학기조회";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -83,5 +108,7 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
     }
 }

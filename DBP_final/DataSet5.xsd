@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet5" targetNamespace="http://tempuri.org/DataSet5.xsd" xmlns:mstns="http://tempuri.org/DataSet5.xsd" xmlns="http://tempuri.org/DataSet5.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" ParameterPrefix=":" PropertyReference="ApplicationSettings.DBP_final.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="Oracle.ManagedDataAccess.Client" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="COURSES2TableAdapter" GeneratorDataComponentClassName="COURSES2TableAdapter" Name="COURSES2" UserDataComponentName="COURSES2TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="DONG1.COURSES2" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT C_ID, C_NAME, OPENDATE, CLASS_PRO_NAME, CLASSROOM FROM DONG1.COURSES2</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="C_ID" DataSetColumn="C_ID" />
+              <Mapping SourceColumn="C_NAME" DataSetColumn="C_NAME" />
+              <Mapping SourceColumn="OPENDATE" DataSetColumn="OPENDATE" />
+              <Mapping SourceColumn="CLASS_PRO_NAME" DataSetColumn="CLASS_PRO_NAME" />
+              <Mapping SourceColumn="CLASSROOM" DataSetColumn="CLASSROOM" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet5" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="DataSet5" msprop:Generator_DataSetName="DataSet5">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="COURSES2" msprop:Generator_RowEvHandlerName="COURSES2RowChangeEventHandler" msprop:Generator_RowDeletedName="COURSES2RowDeleted" msprop:Generator_RowDeletingName="COURSES2RowDeleting" msprop:Generator_RowEvArgName="COURSES2RowChangeEvent" msprop:Generator_TablePropName="COURSES2" msprop:Generator_RowChangedName="COURSES2RowChanged" msprop:Generator_RowChangingName="COURSES2RowChanging" msprop:Generator_TableClassName="COURSES2DataTable" msprop:Generator_RowClassName="COURSES2Row" msprop:Generator_TableVarName="tableCOURSES2" msprop:Generator_UserTableName="COURSES2">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="C_ID" msprop:Generator_ColumnPropNameInRow="C_ID" msprop:Generator_ColumnPropNameInTable="C_IDColumn" msprop:Generator_ColumnVarNameInTable="columnC_ID" msprop:Generator_UserColumnName="C_ID" type="xs:decimal" />
+              <xs:element name="C_NAME" msprop:Generator_ColumnPropNameInRow="C_NAME" msprop:Generator_ColumnPropNameInTable="C_NAMEColumn" msprop:Generator_ColumnVarNameInTable="columnC_NAME" msprop:Generator_UserColumnName="C_NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OPENDATE" msprop:Generator_ColumnPropNameInRow="OPENDATE" msprop:Generator_ColumnPropNameInTable="OPENDATEColumn" msprop:Generator_ColumnVarNameInTable="columnOPENDATE" msprop:Generator_UserColumnName="OPENDATE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CLASS_PRO_NAME" msprop:Generator_ColumnPropNameInRow="CLASS_PRO_NAME" msprop:Generator_ColumnPropNameInTable="CLASS_PRO_NAMEColumn" msprop:Generator_ColumnVarNameInTable="columnCLASS_PRO_NAME" msprop:Generator_UserColumnName="CLASS_PRO_NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CLASSROOM" msprop:Generator_ColumnPropNameInRow="CLASSROOM" msprop:Generator_ColumnPropNameInTable="CLASSROOMColumn" msprop:Generator_ColumnVarNameInTable="columnCLASSROOM" msprop:Generator_UserColumnName="CLASSROOM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

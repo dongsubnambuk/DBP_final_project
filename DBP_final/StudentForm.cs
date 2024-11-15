@@ -159,11 +159,6 @@ namespace DBP_final
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBcolors.color1);
-            OpenChildForm(new StudentGradeView(studentId));
-        }
 
 
 
@@ -178,7 +173,8 @@ namespace DBP_final
         //강의 시간표조회
         private void iconButton2_Click_1(object sender, EventArgs e)
         {
-
+            ActivateButton(sender, RGBcolors.color2);
+            OpenChildForm(new StudentEnroll());
         }
 
 

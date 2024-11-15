@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace DBP_final
 {
@@ -39,7 +40,7 @@ namespace DBP_final
         }
 
       
-        private void LoadStudentGrades(string semester)
+        private void LoadStudentGrades(string semester, bool detailed)
         {
             listBox1.Items.Clear(); // 기존 데이터 초기화
 
@@ -49,16 +50,17 @@ namespace DBP_final
                 {
                     conn.Open();
 
-                    string semesterCondition = semester == "1학기" ? "2024-1" : semester == "2학기" ? "2024-2" : "전체";
+                    string opendateFilter = semester == "1학기" ? "2024-1" : semester == "2학기" ? "2024-2" : "전체";
 
-                    // 쿼리 작성
-                    string query =
+                    string query = detailed ?
                         "SELECT C.C_NAME, E.EXAM_SCORE, E.ATT_SCORE, E.ASS_SCORE1, E.ASS_SCORE2, E.FINAL_GRADE, C.OPENDATE " +
+                        "FROM DONG1.ENROLL E JOIN DONG1.COURSES C ON E.C_ID = C.C_ID WHERE E.S_ID = :studentId" :
+                        "SELECT C.C_NAME, E.FINAL_GRADE, C.OPENDATE " +
                         "FROM DONG1.ENROLL E JOIN DONG1.COURSES C ON E.C_ID = C.C_ID WHERE E.S_ID = :studentId";
 
                     if (semester != "전체")
                     {
-                        query += " AND C.OPENDATE = :semester";
+                        query += " AND C.OPENDATE = :opendateFilter";
                     }
 
                     query += " ORDER BY C.OPENDATE";
@@ -66,32 +68,36 @@ namespace DBP_final
                     using (OracleCommand cmd = new OracleCommand(query, conn))
                     {
                         cmd.Parameters.Add(new OracleParameter("studentId", studentId));
-
                         if (semester != "전체")
                         {
-                            cmd.Parameters.Add(new OracleParameter("semester", semesterCondition));
+                            cmd.Parameters.Add(new OracleParameter("opendateFilter", opendateFilter));
                         }
 
                         OracleDataReader reader = cmd.ExecuteReader();
 
-                        // 성적표 출력 형식 설정
+                        // 성적표 양식 설정
                         listBox1.Items.Add("=============================================================");
                         listBox1.Items.Add("                     성 적 표                     ");
                         listBox1.Items.Add("=============================================================");
                         listBox1.Items.Add($"학번: {studentId}   학기: {semester}");
                         listBox1.Items.Add("=============================================================");
-                        listBox1.Items.Add("과목 | 시험 | 출석 | 과제1 | 과제2 | 성적");
 
-                        bool hasResults = false;
-                        while (reader.Read())
+                        // 데이터 출력
+                        if (detailed)
                         {
-                            hasResults = true;
-                            listBox1.Items.Add($"{reader["C_NAME"]} | {reader["EXAM_SCORE"]} | {reader["ATT_SCORE"]} | {reader["ASS_SCORE1"]} | {reader["ASS_SCORE2"]} | {reader["FINAL_GRADE"]}");
+                            listBox1.Items.Add("과목 | 시험 | 출석 | 과제1 | 과제2 | 성적");
+                            while (reader.Read())
+                            {
+                                listBox1.Items.Add($"{reader["C_NAME"]} | {reader["EXAM_SCORE"]} | {reader["ATT_SCORE"]} | {reader["ASS_SCORE1"]} | {reader["ASS_SCORE2"]} | {reader["FINAL_GRADE"]}");
+                            }
                         }
-
-                        if (!hasResults)
+                        else
                         {
-                            listBox1.Items.Add("해당 학기에 성적 데이터가 없습니다.");
+                            listBox1.Items.Add("과목 | 성적");
+                            while (reader.Read())
+                            {
+                                listBox1.Items.Add($"{reader["C_NAME"]} | {reader["FINAL_GRADE"]}");
+                            }
                         }
 
                         listBox1.Items.Add("=============================================================");
@@ -103,9 +109,9 @@ namespace DBP_final
                 MessageBox.Show("성적 조회 실패: " + ex.Message);
             }
         }
-    
 
-    private void button1_Click_1(object sender, EventArgs e)
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             // 콤보박스와 체크박스 값 확인
             if (comboBox1.SelectedItem == null)
@@ -115,7 +121,13 @@ namespace DBP_final
             }
 
             string selectedSemester = comboBox1.SelectedItem.ToString();
-            LoadStudentGrades(selectedSemester);
+            LoadStudentGrades(selectedSemester, detailed: false); // 약식 성적표
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string selectedSemester = comboBox1.SelectedItem.ToString();
+            LoadStudentGrades(selectedSemester, detailed: true); // 상세 성적표
         }
     }
     }
