@@ -31,16 +31,32 @@ namespace DBP_final
         private void LoadGradeDistributionData()
         {
             Chart chart = chart1;
-            chart.Series.Clear();
-            chart.ChartAreas[0].Name = "GradeDistribution";
+            chart.Series.Clear(); // 기존 시리즈 초기화
+            chart.ChartAreas[0].Name = "GradeDistribution"; // 차트 영역 이름 설정
             chart.Titles.Clear();
-            chart.Titles.Add("학기별 각 과목의 성적 분포");
+            chart.Titles.Add("학기별 과목별 평균 성적");
             listBox1.Items.Clear();
-            listBox1.Items.Add("학기    과목명                  성적");
-            listBox1.Items.Add("=======================================");
+            listBox1.Items.Add("학기       과목명                  평균 성적");
+            listBox1.Items.Add("===========================================");
 
             string connectionString = "User Id=DONG1; Password=sds@258079; Data Source=localhost:1521/xepdb1";
-            string query = "SELECT OPENDATE, C_NAME, FINAL_GRADE FROM DONG1.ENROLL E JOIN DONG1.COURSES C ON E.C_ID = C.C_ID";
+            string query = @"
+        SELECT C.OPENDATE, 
+               C.C_NAME, 
+               AVG(
+                   CASE FINAL_GRADE
+                       WHEN 'A' THEN 4.5
+                       WHEN 'B' THEN 3.5
+                       WHEN 'C' THEN 2.5
+                       WHEN 'D' THEN 1.5
+                       WHEN 'F' THEN 0.0
+                       ELSE NULL
+                   END
+               ) AS AVG_GRADE
+        FROM DONG1.ENROLL E
+        JOIN DONG1.COURSES C ON E.C_ID = C.C_ID
+        GROUP BY C.OPENDATE, C.C_NAME
+        ORDER BY C.OPENDATE, C.C_NAME";
 
             using (OracleConnection conn = new OracleConnection(connectionString))
             {
@@ -49,30 +65,43 @@ namespace DBP_final
                 {
                     using (OracleDataReader reader = cmd.ExecuteReader())
                     {
-                        Series series = new Series("성적 분포")
-                        {
-                            ChartType = SeriesChartType.Point
-                        };
-
                         while (reader.Read())
                         {
-                            string semester = reader["OPENDATE"].ToString();
-                            string courseName = reader["C_NAME"].ToString().PadRight(20);
-                            string grade = reader["FINAL_GRADE"].ToString();
-                            int gradeValue = ConvertGradeToValue(grade);
+                            string semester = reader["OPENDATE"].ToString().Trim();
+                            string courseName = reader["C_NAME"].ToString().Trim();
+                            double avgGrade = reader["AVG_GRADE"] != DBNull.Value ? Convert.ToDouble(reader["AVG_GRADE"]) : 0.0;
 
-                            series.Points.AddXY($"{semester} {courseName}", gradeValue);
-                            listBox1.Items.Add($"{semester,-8} {courseName} {grade}");
+                            // 학기별 시리즈 확인 및 추가
+                            Series series = chart.Series.FindByName(semester);
+                            if (series == null)
+                            {
+                                // 새로운 학기 이름으로 시리즈 생성
+                                series = new Series(semester)
+                                {
+                                    ChartType = SeriesChartType.Bar // 막대형 차트
+                                };
+                                chart.Series.Add(series); // 차트에 시리즈 추가
+                            }
+
+                            // 시리즈에 데이터 추가
+                            series.Points.AddXY(courseName, avgGrade);
+
+                            // 리스트박스에 데이터 추가
+                            listBox1.Items.Add($"{semester,-8} {courseName.PadRight(20)} {avgGrade:F2}");
                         }
 
-                        chart.Series.Add(series);
-                        chart.ChartAreas[0].AxisX.LabelStyle.Angle = -45;
+                        // 차트 설정
                         chart.ChartAreas[0].AxisX.Interval = 1;
-                        chart.Legends[0].Docking = Docking.Top;
+                  
+                        chart.Legends[0].Docking = Docking.Top; // 범례 위치 설정
                     }
                 }
             }
         }
+
+
+
+
 
         private void LoadProfessorCourseCountData()
         {
@@ -95,28 +124,38 @@ namespace DBP_final
                 {
                     using (OracleDataReader reader = cmd.ExecuteReader())
                     {
-                        Series series = new Series("과목 수")
+                        Series series = new Series("강의수")
                         {
-                            ChartType = SeriesChartType.Pie
+                            ChartType = SeriesChartType.Pie // 파이 차트 설정
                         };
 
                         while (reader.Read())
                         {
-                            string professorName = reader["P_NAME"].ToString().PadRight(18);
-                            int courseCount = Convert.ToInt32(reader["CourseCount"]);
+                            string professorName = reader["P_NAME"].ToString().Trim(); // 교수명
+                            int courseCount = Convert.ToInt32(reader["CourseCount"]); // 강의 수
 
-                            series.Points.AddXY(professorName.Trim(), courseCount);
-                            listBox2.Items.Add($"{professorName} {courseCount}");
+                            // 파이 차트 데이터 포인트 설정
+                            DataPoint point = new DataPoint
+                            {
+                                LegendText = professorName, // 범례에 표시할 교수명
+                                YValues = new double[] { courseCount }, // 강의 수
+                                Label = courseCount.ToString() // 차트 내부에 강의 수 표시
+                            };
+
+                            series.Points.Add(point); // 데이터 포인트 추가
+
+                            // 리스트박스에 추가
+                            listBox2.Items.Add($"{professorName.PadRight(18)} {courseCount}");
                         }
 
                         chart.Series.Add(series);
-                        chart.ChartAreas[0].AxisX.LabelStyle.Angle = -45;
-                        chart.ChartAreas[0].AxisX.Interval = 1;
-                        chart.Legends[0].Docking = Docking.Top;
+                        chart.Legends[0].Docking = Docking.Top; // 범례 위치 설정
+                        chart.Legends[0].Title = "교수명"; // 범례 제목 설정
                     }
                 }
             }
         }
+
 
         private void LoadStudentCountPerCourseData()
         {
@@ -141,26 +180,34 @@ namespace DBP_final
                     {
                         Series series = new Series("학생 수")
                         {
-                            ChartType = SeriesChartType.Bubble
+                            ChartType = SeriesChartType.Pie // 파이 차트로 설정
                         };
 
                         while (reader.Read())
                         {
-                            string courseName = reader["C_NAME"].ToString().PadRight(20);
+                            string courseName = reader["C_NAME"].ToString().Trim();
                             int studentCount = Convert.ToInt32(reader["StudentCount"]);
 
-                            series.Points.AddXY(courseName.Trim(), studentCount);
-                            listBox3.Items.Add($"{courseName} {studentCount}");
+                            // 파이 차트 점 추가
+                            DataPoint point = new DataPoint();
+                            point.LegendText = courseName; // 범례에는 과목명 표시
+                            point.YValues = new double[] { studentCount }; // 값은 학생 수
+                            point.Label = studentCount.ToString(); // 차트 내부에 학생 수 표시
+                            series.Points.Add(point);
+
+                            // 리스트 박스에 데이터 추가
+                            listBox3.Items.Add($"{courseName.PadRight(20)} {studentCount}");
                         }
 
                         chart.Series.Add(series);
-                        chart.ChartAreas[0].AxisX.LabelStyle.Angle = -45;
-                        chart.ChartAreas[0].AxisX.Interval = 1;
-                        chart.Legends[0].Docking = Docking.Top;
+                        chart.Legends[0].Docking = Docking.Top; // 범례 위치 설정
+                        chart.Legends[0].Title = "과목명"; // 범례 제목 설정
                     }
                 }
             }
         }
+
+
 
         private void LoadTopStudentsData()
         {

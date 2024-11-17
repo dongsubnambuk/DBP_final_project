@@ -74,61 +74,67 @@ namespace DBP_final
         {
             try
             {
-                // 데이터셋의 각 행에 대해 성적 계산
+                // 데이터셋의 각 행 중 변경된 행만 처리
                 foreach (DataRow row in dataSet3.ENROLL.Rows)
                 {
-                    int examScore = Convert.ToInt32(row["EXAM_SCORE"]);
-                    int attScore = Convert.ToInt32(row["ATT_SCORE"]);
-                    int assScore1 = Convert.ToInt32(row["ASS_SCORE1"]);
-                    int assScore2 = Convert.ToInt32(row["ASS_SCORE2"]);
-
-                    // 최대 점수 제한 체크
-                    if (examScore > 50)
+                    // 변경된 행인지 확인
+                    if (row.RowState == DataRowState.Modified)
                     {
-                        MessageBox.Show("시험 점수는 50점 이하로 입력해야 합니다.");
-                        return;
+                        // 각 점수를 읽기 전에 DBNull 여부 확인
+                        int examScore = row["EXAM_SCORE"] != DBNull.Value ? Convert.ToInt32(row["EXAM_SCORE"]) : 0;
+                        int attScore = row["ATT_SCORE"] != DBNull.Value ? Convert.ToInt32(row["ATT_SCORE"]) : 0;
+                        int assScore1 = row["ASS_SCORE1"] != DBNull.Value ? Convert.ToInt32(row["ASS_SCORE1"]) : 0;
+                        int assScore2 = row["ASS_SCORE2"] != DBNull.Value ? Convert.ToInt32(row["ASS_SCORE2"]) : 0;
+
+                        // 최대 점수 제한 체크
+                        if (examScore > 50)
+                        {
+                            MessageBox.Show("시험 점수는 50점 이하로 입력해야 합니다.");
+                            return;
+                        }
+                        if (attScore > 40)
+                        {
+                            MessageBox.Show("출석 점수는 40점 이하로 입력해야 합니다.");
+                            return;
+                        }
+                        if (assScore1 > 5 || assScore2 > 5)
+                        {
+                            MessageBox.Show("각 과제 점수는 5점 이하로 입력해야 합니다.");
+                            return;
+                        }
+
+                        // 과제 점수 합산 (과제당 5점으로 10점 만점)
+                        int totalAssScore = assScore1 + assScore2;
+
+                        // 총점 계산 (시험 점수 + 출석 점수 + 과제 점수 합)
+                        int totalScore = examScore + attScore + totalAssScore;
+
+                        // 등급 계산
+                        string finalGrade;
+                        if (totalScore >= 90)
+                            finalGrade = "A";
+                        else if (totalScore >= 80)
+                            finalGrade = "B";
+                        else if (totalScore >= 70)
+                            finalGrade = "C";
+                        else if (totalScore >= 60)
+                            finalGrade = "D";
+                        else
+                            finalGrade = "F";
+
+                        // FINAL_GRADE 필드 업데이트
+                        row["FINAL_GRADE"] = finalGrade;
                     }
-                    if (attScore > 40)
-                    {
-                        MessageBox.Show("출석 점수는 40점 이하로 입력해야 합니다.");
-                        return;
-                    }
-                    if (assScore1 > 5 || assScore2 > 5)
-                    {
-                        MessageBox.Show("각 과제 점수는 5점 이하로 입력해야 합니다.");
-                        return;
-                    }
-
-                    // 과제 점수 합산 (과제당 5점으로 10점 만점)
-                    int totalAssScore = assScore1 + assScore2;
-
-                    // 총점 계산 (시험 점수 + 출석 점수 + 과제 점수 합)
-                    int totalScore = examScore + attScore + totalAssScore;
-
-                    // 등급 계산
-                    string finalGrade;
-                    if (totalScore >= 90)
-                        finalGrade = "A";
-                    else if (totalScore >= 80)
-                        finalGrade = "B";
-                    else if (totalScore >= 70)
-                        finalGrade = "C";
-                    else if (totalScore >= 60)
-                        finalGrade = "D";
-                    else
-                        finalGrade = "F";
-
-                    // FINAL_GRADE 필드 업데이트
-                    row["FINAL_GRADE"] = finalGrade;
                 }
 
-                MessageBox.Show("최종 평가 완료. 저장하려면 '저장하기' 버튼을 눌러주세요.");
+                MessageBox.Show("변경된 행에 대한 최종 평가 완료. 저장하려면 '저장하기' 버튼을 눌러주세요.");
             }
             catch (System.Exception ex)
             {
                 MessageBox.Show("최종 평가 실패: " + ex.Message);
             }
         }
+
 
     }
 }

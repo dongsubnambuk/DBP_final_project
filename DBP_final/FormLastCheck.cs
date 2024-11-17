@@ -91,5 +91,10 @@ namespace DBP_final
                 MessageBox.Show("데이터를 불러오는 중 오류가 발생했습니다: " + ex.Message);
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
