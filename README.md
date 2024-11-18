@@ -63,9 +63,3 @@
 
 ---
 
-### 📚 설치 및 실행 방법
-
-1. 이 프로젝트를 클론합니다:
-   ```bash
-   git clone https://github.com/dongsubnambuk/grade-database.git
-   cd grade-database
