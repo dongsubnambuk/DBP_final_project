@@ -142,7 +142,7 @@ namespace DBP_final
                              JOIN COURSES C ON E.C_ID = C.C_ID 
                              JOIN CLASSES CL ON C.C_ID = CL.C_ID
                              JOIN PROFESSORS P ON C.CLASS_PRO = P.P_ID
-                             WHERE E.S_ID = :studentId 
+                             WHERE E.S_ID = :studentId AND C.OPENDATE='2024-2'
                              ORDER BY C.C_ID";
                     using (OracleCommand cmd = new OracleCommand(query, conn))
                     {

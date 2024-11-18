@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\studentgradeveiw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|c:\\users\\user\\desktop\\dbp_final\\dbp_final\\studentgradeveiw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|solutionrelative:studentgradeveiw.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -35,7 +35,7 @@
       "RelativeMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|solutionrelative:adminplus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|c:\\users\\user\\desktop\\dbp_final\\dbp_final\\formlastcheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\formlastcheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|solutionrelative:formlastcheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -122,8 +122,7 @@
               "RelativeToolTip": "FormLastCheck.cs",
               "ViewState": "AgIAAA8AAAAAzMzMzMwYwCkAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T09:57:54.528Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-17T09:57:54.528Z"
             },
             {
               "$type": "Document",
@@ -142,11 +141,10 @@
               "Title": "StudentForm.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentForm.cs",
               "RelativeDocumentMoniker": "StudentForm.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentForm.cs [\uB514\uC790\uC778]*",
-              "RelativeToolTip": "StudentForm.cs [\uB514\uC790\uC778]*",
+              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentForm.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "StudentForm.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T04:24:30.014Z",
-              "EditorCaption": " [\uB514\uC790\uC778]"
+              "WhenOpened": "2024-11-14T04:24:30.014Z"
             },
             {
               "$type": "Document",
@@ -154,8 +152,8 @@
               "Title": "StudentGradeVeiw.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentGradeVeiw.cs",
               "RelativeDocumentMoniker": "StudentGradeVeiw.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentGradeVeiw.cs [\uB514\uC790\uC778]*",
-              "RelativeToolTip": "StudentGradeVeiw.cs [\uB514\uC790\uC778]*",
+              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentGradeVeiw.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "StudentGradeVeiw.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-14T04:52:46.758Z",
               "EditorCaption": " [\uB514\uC790\uC778]"
@@ -166,12 +164,11 @@
               "Title": "StudentGradeVeiw.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentGradeVeiw.cs",
               "RelativeDocumentMoniker": "StudentGradeVeiw.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentGradeVeiw.cs*",
-              "RelativeToolTip": "StudentGradeVeiw.cs*",
+              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentGradeVeiw.cs",
+              "RelativeToolTip": "StudentGradeVeiw.cs",
               "ViewState": "AgIAAI4AAAAAl5mZmZkJwKUAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T05:04:07.119Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-14T05:04:07.119Z"
             },
             {
               "$type": "Document",
@@ -182,8 +179,7 @@
               "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentClassView.cs [\uB514\uC790\uC778]",
               "RelativeToolTip": "StudentClassView.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T10:12:03.677Z",
-              "EditorCaption": " [\uB514\uC790\uC778]"
+              "WhenOpened": "2024-11-15T10:12:03.677Z"
             },
             {
               "$type": "Document",
@@ -195,8 +191,7 @@
               "RelativeToolTip": "StudentClassView.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T10:39:07.37Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T10:39:07.37Z"
             },
             {
               "$type": "Document",
@@ -219,8 +214,7 @@
               "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\FormLastCheck.cs [\uB514\uC790\uC778]",
               "RelativeToolTip": "FormLastCheck.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T10:54:44.349Z",
-              "EditorCaption": " [\uB514\uC790\uC778]"
+              "WhenOpened": "2024-11-15T10:54:44.349Z"
             },
             {
               "$type": "Document",
@@ -232,8 +226,7 @@
               "RelativeToolTip": "AdminChart.cs",
               "ViewState": "AgIAAAcAAAAAJjMzMzMrwBQAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T13:42:25.591Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T13:42:25.591Z"
             },
             {
               "$type": "Document",
@@ -244,8 +237,7 @@
               "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\AdminChart.cs [\uB514\uC790\uC778]",
               "RelativeToolTip": "AdminChart.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T13:33:22.765Z",
-              "EditorCaption": " [\uB514\uC790\uC778]"
+              "WhenOpened": "2024-11-15T13:33:22.765Z"
             },
             {
               "$type": "Document",
@@ -267,8 +259,7 @@
               "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\AdminPlus.cs [\uB514\uC790\uC778]",
               "RelativeToolTip": "AdminPlus.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T10:54:18.737Z",
-              "EditorCaption": " [\uB514\uC790\uC778]"
+              "WhenOpened": "2024-11-15T10:54:18.737Z"
             },
             {
               "$type": "Document",
@@ -280,8 +271,7 @@
               "RelativeToolTip": "AdminPlus.Designer.cs",
               "ViewState": "AgIAAJMCAAAAAAAAAAAIwLkCAACAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T09:26:30.52Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-17T09:26:30.52Z"
             },
             {
               "$type": "Document",
@@ -293,8 +283,7 @@
               "RelativeToolTip": "AdminPlus.cs",
               "ViewState": "AgIAADoBAAAAAAAAAAAAADoBAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T15:09:47.104Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T15:09:47.104Z"
             },
             {
               "$type": "Document",
@@ -317,8 +306,7 @@
               "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\DataSet1.xsd",
               "RelativeToolTip": "DataSet1.xsd",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
-              "WhenOpened": "2024-11-17T11:42:34.575Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-17T11:42:34.575Z"
             },
             {
               "$type": "Document",
@@ -348,12 +336,11 @@
               "Title": "StudentForm.Designer.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentForm.Designer.cs",
               "RelativeDocumentMoniker": "StudentForm.Designer.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentForm.Designer.cs*",
-              "RelativeToolTip": "StudentForm.Designer.cs*",
+              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentForm.Designer.cs",
+              "RelativeToolTip": "StudentForm.Designer.cs",
               "ViewState": "AgIAAOUAAAAAAAAAAAAIwPEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T17:20:13.887Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T17:20:13.887Z"
             },
             {
               "$type": "Document",
@@ -385,12 +372,11 @@
               "Title": "StudentForm.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentForm.cs",
               "RelativeDocumentMoniker": "StudentForm.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentForm.cs*",
-              "RelativeToolTip": "StudentForm.cs*",
+              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentForm.cs",
+              "RelativeToolTip": "StudentForm.cs",
               "ViewState": "AgIAAGsAAAAAAAAAAAAcwIgAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T04:24:32.021Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-14T04:24:32.021Z"
             },
             {
               "$type": "Document",
