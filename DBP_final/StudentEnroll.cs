@@ -56,6 +56,7 @@ namespace DBP_final
             label4.Text = $"{minutes:D2}:{seconds:D2}"; // MM:SS 형식으로 표시
         }
 
+
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
             string courseCode = textBox1.Text.Trim();
@@ -94,6 +95,20 @@ namespace DBP_final
                         }
                     }
 
+                    // 신청 가능 학기인지 확인
+                    string semesterCheckQuery = "SELECT OPENDATE FROM COURSES WHERE C_ID = :courseCode";
+                    using (OracleCommand semesterCheckCmd = new OracleCommand(semesterCheckQuery, conn))
+                    {
+                        semesterCheckCmd.Parameters.Add(new OracleParameter("courseCode", courseCode));
+
+                        var opendate = semesterCheckCmd.ExecuteScalar()?.ToString();
+                        if (opendate == "2024-1") // 특정 학기(2024-1)에 대해 신청 제한
+                        {
+                            MessageBox.Show("2024-1 학기의 과목은 현재 신청할 수 없습니다.");
+                            return;
+                        }
+                    }
+
                     // 수강 등록 쿼리
                     string insertQuery = "INSERT INTO ENROLL (S_ID, C_ID) VALUES (:studentId, :courseCode)";
                     using (OracleCommand cmd = new OracleCommand(insertQuery, conn))
@@ -119,6 +134,7 @@ namespace DBP_final
                 MessageBox.Show("수강 신청 중 오류가 발생했습니다: " + ex.Message);
             }
         }
+
 
 
 

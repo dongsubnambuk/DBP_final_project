@@ -30,13 +30,41 @@ namespace DBP_final
 
         private void AdminPlus_Load(object sender, EventArgs e)
         {
-            // 데이터 로드
-            this.pROFESSORSTableAdapter.Fill(this.dataSet7.PROFESSORS);
-            this.cOURSES2TableAdapter.Fill(this.dataSet5.COURSES2);
-            this.cOURSESWITHPROFESSORNAMETableAdapter.Fill(this.dataSet2.COURSESWITHPROFESSORNAME);
-            this.cOURSESTableAdapter.Fill(this.dataSet1.COURSES);
+            try
+            {
+                // PROFESSORS 테이블 데이터 로드
+                this.pROFESSORSTableAdapter.Fill(this.dataSet7.PROFESSORS);
 
+                // COURSES 테이블 데이터 로드
+                this.cOURSESTableAdapter.Fill(this.dataSet1.COURSES);
+
+                // COURSES2 테이블 데이터 로드
+                this.cOURSES2TableAdapter.Fill(this.dataSet5.COURSES2);
+
+                // COURSESWITHPROFESSORNAME 테이블 데이터 로드
+                this.cOURSESWITHPROFESSORNAMETableAdapter.Fill(this.dataSet2.COURSESWITHPROFESSORNAME);
+
+                // DataTable에서 OPENDATE = '2024-2' 데이터 필터링
+                DataTable coursesTable = this.dataSet1.COURSES;
+                DataView filteredView = new DataView(coursesTable)
+                {
+                    RowFilter = "OPENDATE = '2024-2'",
+                     Sort = "C_ID " // C_ID 기준 내림차순 정렬
+                };
+
+                // DataGridView3에 필터링된 데이터 바인딩
+                dataGridView3.AutoGenerateColumns = true;
+                dataGridView3.DataSource = filteredView;
+
+               
+            }
+            catch (Exception ex)
+            {
+                // 오류 처리
+                MessageBox.Show("데이터 로드 중 오류가 발생했습니다: " + ex.Message);
+            }
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -49,22 +77,52 @@ namespace DBP_final
             mynewDataRow["CLASS_PRO"] = textBox4.Text;
             mytable.Rows.Add(mynewDataRow);
             cOURSESTableAdapter.Update(dataSet1.COURSES);
-            MessageBox.Show("강의 개설과 교수님 배정이 완료되었습니다. 옆으로 이동해서 강의실 배정해주세요.");
+            MessageBox.Show("강의 개설과 교수님 배정이 완료되었습니다. 강의실 배정해주세요.");
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            // 강의실 배정
-            DataTable mytable1 = dataSet61.Tables["CLASSES"];
-            DataRow mynewDataRow = mytable1.NewRow();
-            mynewDataRow["CLASS_ID"] = textBox8.Text;
-            mynewDataRow["C_ID"] = textBox7.Text;
-            mynewDataRow["CLASS_DATE"] = textBox6.Text;
-            mynewDataRow["CLASS_PLACE"] = textBox5.Text;
-            mytable1.Rows.Add(mynewDataRow);
-            classesTableAdapter1.Update(dataSet61.CLASSES);
-            MessageBox.Show("강의실 배정을 했습니다.");
+            try
+            {
+                // 강의실 배정
+                using (OracleConnection conn = new OracleConnection("User Id=DONG1; Password=sds@258079; Data Source=localhost:1521/xepdb1"))
+                {
+                    conn.Open();
+
+                    // 데이터 삽입 쿼리
+                    string insertQuery = @"
+                INSERT INTO CLASSES (CLASS_ID, C_ID, CLASS_DATE, CLASS_PLACE)
+                VALUES (:classId, :courseId, :classDate, :classPlace)";
+
+                    using (OracleCommand cmd = new OracleCommand(insertQuery, conn))
+                    {
+                        cmd.Parameters.Add(new OracleParameter("classId", textBox8.Text.Trim()));
+                        cmd.Parameters.Add(new OracleParameter("courseId", textBox7.Text.Trim()));
+                        cmd.Parameters.Add(new OracleParameter("classDate", textBox6.Text.Trim()));
+                        cmd.Parameters.Add(new OracleParameter("classPlace", textBox5.Text.Trim()));
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("강의실 배정이 완료되었습니다.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("강의실 배정에 실패했습니다.");
+                            return;
+                        }
+                    }
+                }
+
+                // 데이터 업데이트 및 DataGridView 새로 고침
+                this.cOURSESWITHPROFESSORNAMETableAdapter.Fill(this.dataSet2.COURSESWITHPROFESSORNAME);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("오류 발생: " + ex.Message);
+            }
         }
+
 
         private void checkBoxHide_CheckedChanged_1(object sender, EventArgs e)
         {
@@ -343,17 +401,8 @@ namespace DBP_final
             }
         }
 
-        private void fillBy2ToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.cOURSESTableAdapter.FillBy2(this.dataSet1.COURSES);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
+       
 
-        }
+        
     }
 }

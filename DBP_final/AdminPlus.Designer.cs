@@ -100,8 +100,6 @@
             this.oPENDATEDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cLASSPRODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label17 = new System.Windows.Forms.Label();
-            this.fillBy2ToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillBy2ToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.cOURSESBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOURSESWITHPROFESSORNAMEBindingSource1)).BeginInit();
@@ -117,7 +115,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSet7)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.fillBy2ToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // cOURSESBindingSource
@@ -736,31 +733,12 @@
             this.label17.TabIndex = 15;
             this.label17.Text = "과목 리스트";
             // 
-            // fillBy2ToolStrip
-            // 
-            this.fillBy2ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillBy2ToolStripButton});
-            this.fillBy2ToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillBy2ToolStrip.Name = "fillBy2ToolStrip";
-            this.fillBy2ToolStrip.Size = new System.Drawing.Size(786, 25);
-            this.fillBy2ToolStrip.TabIndex = 16;
-            this.fillBy2ToolStrip.Text = "fillBy2ToolStrip";
-            // 
-            // fillBy2ToolStripButton
-            // 
-            this.fillBy2ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillBy2ToolStripButton.Name = "fillBy2ToolStripButton";
-            this.fillBy2ToolStripButton.Size = new System.Drawing.Size(46, 22);
-            this.fillBy2ToolStripButton.Text = "FillBy2";
-            this.fillBy2ToolStripButton.Click += new System.EventHandler(this.fillBy2ToolStripButton_Click);
-            // 
             // AdminPlus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(213)))));
             this.ClientSize = new System.Drawing.Size(986, 504);
-            this.Controls.Add(this.fillBy2ToolStrip);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.panel1);
@@ -789,8 +767,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.fillBy2ToolStrip.ResumeLayout(false);
-            this.fillBy2ToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -863,7 +839,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn oPENDATEDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn cLASSPRODataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ToolStrip fillBy2ToolStrip;
-        private System.Windows.Forms.ToolStripButton fillBy2ToolStripButton;
     }
 }

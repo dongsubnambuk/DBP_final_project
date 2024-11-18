@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\adminplus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|solutionrelative:adminplus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\adminplus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|solutionrelative:adminplus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\adminplus.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|solutionrelative:adminplus.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\studentenroll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|solutionrelative:studentenroll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -39,10 +51,6 @@
       "RelativeMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|solutionrelative:adminchart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\adminplus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|solutionrelative:adminplus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\formlastcheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|solutionrelative:formlastcheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -57,14 +65,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|solutionrelative:adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\adminplus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|solutionrelative:adminplus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\adminplus.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|solutionrelative:adminplus.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3283490B-E9DC-44A4-92EA-4B3EDA88A964}|DBP_final.csproj|C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\admingradeinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -110,22 +110,109 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "StudentForm.cs [\uB514\uC790\uC778]",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentForm.cs",
-              "RelativeDocumentMoniker": "StudentForm.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentForm.cs [\uB514\uC790\uC778]",
-              "RelativeToolTip": "StudentForm.cs [\uB514\uC790\uC778]",
+              "DocumentIndex": 7,
+              "Title": "StudentClassView.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentClassView.cs",
+              "RelativeDocumentMoniker": "StudentClassView.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentClassView.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "StudentClassView.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T04:24:30.014Z"
+              "WhenOpened": "2024-11-15T10:12:03.677Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "StudentClassView.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentClassView.cs",
+              "RelativeDocumentMoniker": "StudentClassView.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentClassView.cs",
+              "RelativeToolTip": "StudentClassView.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T10:39:07.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StudentEnroll.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentEnroll.cs",
+              "RelativeDocumentMoniker": "StudentEnroll.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentEnroll.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "StudentEnroll.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T02:57:18.293Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StudentEnroll.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentEnroll.cs",
+              "RelativeDocumentMoniker": "StudentEnroll.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentEnroll.cs",
+              "RelativeToolTip": "StudentEnroll.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAUwIgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T08:19:42.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminPlus.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\AdminPlus.cs",
+              "RelativeDocumentMoniker": "AdminPlus.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\AdminPlus.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "AdminPlus.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T10:54:18.737Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminPlus.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\AdminPlus.cs",
+              "RelativeDocumentMoniker": "AdminPlus.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\AdminPlus.cs",
+              "RelativeToolTip": "AdminPlus.cs",
+              "ViewState": "AgIAAF0BAAAAl5mZmZkXwG0BAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T15:09:47.104Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "AdminPlus.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\AdminPlus.Designer.cs",
+              "RelativeDocumentMoniker": "AdminPlus.Designer.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\AdminPlus.Designer.cs",
+              "RelativeToolTip": "AdminPlus.Designer.cs",
+              "ViewState": "AgIAANYCAAAAAAAAAAAEwN8CAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T09:26:30.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "StudentGradeVeiw.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentGradeVeiw.cs",
+              "RelativeDocumentMoniker": "StudentGradeVeiw.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentGradeVeiw.cs",
+              "RelativeToolTip": "StudentGradeVeiw.cs",
+              "ViewState": "AgIAAI4AAAAAl5mZmZkJwKUAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T05:04:07.119Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "StudentGradeVeiw.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentGradeVeiw.cs",
               "RelativeDocumentMoniker": "StudentGradeVeiw.cs",
@@ -138,62 +225,13 @@
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "StudentGradeVeiw.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentGradeVeiw.cs",
-              "RelativeDocumentMoniker": "StudentGradeVeiw.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentGradeVeiw.cs",
-              "RelativeToolTip": "StudentGradeVeiw.cs",
-              "ViewState": "AgIAAI4AAAAAl5mZmZkJwKUAAAApAAAAAAAAAA==",
+              "Title": "StudentForm.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentForm.cs",
+              "RelativeDocumentMoniker": "StudentForm.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentForm.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "StudentForm.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T05:04:07.119Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "StudentClassView.cs [\uB514\uC790\uC778]",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentClassView.cs",
-              "RelativeDocumentMoniker": "StudentClassView.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentClassView.cs [\uB514\uC790\uC778]",
-              "RelativeToolTip": "StudentClassView.cs [\uB514\uC790\uC778]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T10:12:03.677Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "StudentClassView.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentClassView.cs",
-              "RelativeDocumentMoniker": "StudentClassView.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentClassView.cs",
-              "RelativeToolTip": "StudentClassView.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T10:39:07.37Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "StudentEnroll.cs [\uB514\uC790\uC778]",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentEnroll.cs",
-              "RelativeDocumentMoniker": "StudentEnroll.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentEnroll.cs [\uB514\uC790\uC778]*",
-              "RelativeToolTip": "StudentEnroll.cs [\uB514\uC790\uC778]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T02:57:18.293Z",
-              "EditorCaption": " [\uB514\uC790\uC778]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StudentEnroll.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentEnroll.cs",
-              "RelativeDocumentMoniker": "StudentEnroll.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\StudentEnroll.cs*",
-              "RelativeToolTip": "StudentEnroll.cs*",
-              "ViewState": "AgIAAIMAAAAATmZmZmYmwJAAAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T08:19:42.57Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-14T04:24:30.014Z"
             },
             {
               "$type": "Document",
@@ -208,7 +246,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "FormLastCheck.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\FormLastCheck.cs",
               "RelativeDocumentMoniker": "FormLastCheck.cs",
@@ -220,7 +258,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "AdminForm.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\AdminForm.cs",
               "RelativeDocumentMoniker": "AdminForm.cs",
@@ -232,7 +270,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "FormLastCheck.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\FormLastCheck.cs",
               "RelativeDocumentMoniker": "FormLastCheck.cs",
@@ -243,7 +281,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "AdminChart.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\AdminChart.cs",
               "RelativeDocumentMoniker": "AdminChart.cs",
@@ -255,7 +293,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "AdminChart.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\AdminChart.cs",
               "RelativeDocumentMoniker": "AdminChart.cs",
@@ -266,7 +304,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "AdminForm.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\AdminForm.cs",
               "RelativeDocumentMoniker": "AdminForm.cs",
@@ -274,41 +312,6 @@
               "RelativeToolTip": "AdminForm.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T16:38:45.789Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AdminPlus.cs [\uB514\uC790\uC778]",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\AdminPlus.cs",
-              "RelativeDocumentMoniker": "AdminPlus.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\AdminPlus.cs [\uB514\uC790\uC778]",
-              "RelativeToolTip": "AdminPlus.cs [\uB514\uC790\uC778]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T10:54:18.737Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "AdminPlus.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\AdminPlus.Designer.cs",
-              "RelativeDocumentMoniker": "AdminPlus.Designer.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\AdminPlus.Designer.cs",
-              "RelativeToolTip": "AdminPlus.Designer.cs",
-              "ViewState": "AgIAAJMCAAAAAAAAAAAIwLkCAACAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T09:26:30.52Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "AdminPlus.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\AdminPlus.cs",
-              "RelativeDocumentMoniker": "AdminPlus.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\AdminPlus.cs",
-              "RelativeToolTip": "AdminPlus.cs",
-              "ViewState": "AgIAADoBAAAAAAAAAAAAADoBAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T15:09:47.104Z"
             },
             {
               "$type": "Document",
@@ -331,7 +334,8 @@
               "ToolTip": "C:\\Users\\user\\Desktop\\DBP_final\\DBP_final\\DataSet1.xsd",
               "RelativeToolTip": "DataSet1.xsd",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
-              "WhenOpened": "2024-11-17T11:42:34.575Z"
+              "WhenOpened": "2024-11-17T11:42:34.575Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
