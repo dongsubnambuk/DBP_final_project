@@ -12,10 +12,10 @@ namespace DBP_final
         {
             InitializeComponent();
             // ListBox 글꼴을 고정 폭 글꼴로 설정
-            listBox1.Font = new Font("Courier New", 10);
-            listBox2.Font = new Font("Courier New", 10);
-            listBox3.Font = new Font("Courier New", 10);
-            listBox4.Font = new Font("Courier New", 10);
+            listBox1.Font = new Font("Courier New", 14);
+            listBox2.Font = new Font("Courier New", 14);
+            listBox3.Font = new Font("Courier New", 14);
+            listBox4.Font = new Font("Courier New", 14);
 
             LoadGradeDistributionData();
             LoadProfessorCourseCountData();
@@ -25,7 +25,7 @@ namespace DBP_final
 
         private void 통계_Load(object sender, EventArgs e)
         {
-
+        
         }
 
         private void LoadGradeDistributionData()
@@ -211,61 +211,100 @@ namespace DBP_final
 
         private void LoadTopStudentsData()
         {
+            // Chart 초기화
             Chart chart = chart4;
             chart.Series.Clear();
-            chart.ChartAreas[0].Name = "TopStudents";
             chart.Titles.Clear();
             chart.Titles.Add("성적 우수 학생");
+            chart.ChartAreas[0].Name = "TopStudents";
+
+            // ListBox 초기화
             listBox4.Items.Clear();
             listBox4.Items.Add("학생명                평균 성적");
             listBox4.Items.Add("===============================");
 
+            // 데이터베이스 연결 문자열과 SQL 쿼리
             string connectionString = "User Id=DONG1; Password=sds@258079; Data Source=localhost:1521/xepdb1";
             string query = @"
-                SELECT S_NAME, AVG(
-                    CASE FINAL_GRADE
-                        WHEN 'A' THEN 4.5
-                        WHEN 'B' THEN 3.5
-                        WHEN 'C' THEN 2.5
-                        WHEN 'D' THEN 1.5
-                        WHEN 'F' THEN 0.0
-                        ELSE NULL
-                    END
-                ) AS AvgGrade
-                FROM DONG1.ENROLL E
-                JOIN DONG1.STUDENTS S ON E.S_ID = S.S_ID
-                GROUP BY S_NAME
-                ORDER BY AvgGrade DESC
-                FETCH FIRST 5 ROWS ONLY";
+        SELECT 
+            S_NAME,
+            NVL(AVG(
+                CASE FINAL_GRADE
+                    WHEN 'A' THEN 4.5
+                    WHEN 'B' THEN 3.5
+                    WHEN 'C' THEN 2.5
+                    WHEN 'D' THEN 1.5
+                    WHEN 'F' THEN 0.0
+                    ELSE NULL
+                END
+            ), 0) AS AvgGrade
+        FROM 
+            DONG1.ENROLL E
+        JOIN 
+            DONG1.STUDENTS S ON E.S_ID = S.S_ID
+        GROUP BY 
+            S_NAME
+        ORDER BY 
+            AvgGrade DESC
+        FETCH FIRST 5 ROWS ONLY";
 
-            using (OracleConnection conn = new OracleConnection(connectionString))
+            try
             {
-                conn.Open();
-                using (OracleCommand cmd = new OracleCommand(query, conn))
+                using (OracleConnection conn = new OracleConnection(connectionString))
                 {
-                    using (OracleDataReader reader = cmd.ExecuteReader())
+                    conn.Open();
+                    using (OracleCommand cmd = new OracleCommand(query, conn))
                     {
-                        Series series = new Series("평균 성적")
+                        using (OracleDataReader reader = cmd.ExecuteReader())
                         {
-                            ChartType = SeriesChartType.Bar
-                        };
+                            // 차트 데이터 시리즈 생성
+                            Series series = new Series("평균 성적")
+                            {
+                                ChartType = SeriesChartType.Bar
+                            };
 
-                        while (reader.Read())
-                        {
-                            string studentName = reader["S_NAME"].ToString().PadRight(20);
-                            double avgGrade = Convert.ToDouble(reader["AvgGrade"]);
+                            // 데이터 읽기 및 처리
+                            while (reader.Read())
+                            {
+                                // 학생명 읽기
+                                string studentName = reader["S_NAME"]?.ToString() ?? "Unknown";
 
-                            series.Points.AddXY(studentName.Trim(), avgGrade);
-                            listBox4.Items.Add($"{studentName} {avgGrade:F2}");
+                                // 평균 성적 읽기 및 변환
+                                double avgGrade = 0.0;
+                                if (reader["AvgGrade"] != DBNull.Value && double.TryParse(reader["AvgGrade"].ToString(), out avgGrade))
+                                {
+                                    // 차트 및 ListBox에 추가
+                                    series.Points.AddXY(studentName.Trim(), avgGrade);
+                                    listBox4.Items.Add($"{studentName,-20} {avgGrade:F2}");
+                                }
+                                else
+                                {
+                                    // 평균 성적이 없는 경우
+                                    listBox4.Items.Add($"{studentName,-20} N/A");
+                                }
+                            }
+
+                            // 차트에 시리즈 추가
+                            chart.Series.Add(series);
+
+                            // 차트 설정
+                            chart.ChartAreas[0].AxisX.Interval = 1;
+                            if (chart.Legends.Count > 0)
+                            {
+                                chart.Legends[0].Docking = Docking.Top;
+                            }
                         }
-
-                        chart.Series.Add(series);
-                        chart.ChartAreas[0].AxisX.Interval = 1;
-                        chart.Legends[0].Docking = Docking.Top;
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                // 오류 메시지 표시
+                MessageBox.Show($"데이터를 불러오는 중 오류가 발생했습니다: {ex.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
 
         private int ConvertGradeToValue(string grade)
         {

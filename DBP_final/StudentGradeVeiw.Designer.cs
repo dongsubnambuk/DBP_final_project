@@ -109,7 +109,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.listBox1);
             this.Name = "StudentGradeView";
-            this.Text = "지난학기조회";
+            this.Text = "성적조회";
             this.Load += new System.EventHandler(this.StudentGradeView_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();

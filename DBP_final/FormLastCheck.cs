@@ -26,6 +26,28 @@ namespace DBP_final
 
             // 기본 OracleCommand 설정
             oracleCommand1.Connection = oracleConnection1;
+
+            // OPEN_DATE 필터링 SQL 쿼리
+            string query = @"
+        SELECT 
+            c.C_NAME AS 과목명,
+            COUNT(e.S_ID) AS 신청인원수
+        FROM 
+            Courses c
+        JOIN 
+            Enroll e ON c.C_ID = e.C_ID
+        WHERE 
+            c.OPENDATE = '2024-1'
+        GROUP BY 
+            c.C_NAME";
+
+            // OracleDataAdapter로 데이터 가져오기
+            OracleDataAdapter adapter = new OracleDataAdapter(query, oracleConnection1);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+
+            // DataGridView에 바인딩
+            dataGridView2.DataSource = dataTable;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

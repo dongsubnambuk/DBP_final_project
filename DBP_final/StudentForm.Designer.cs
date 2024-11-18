@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentForm));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
@@ -44,7 +45,6 @@
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconButton();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -73,8 +73,19 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(218, 516);
+            this.panel1.Size = new System.Drawing.Size(218, 541);
             this.panel1.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(213)))));
+            this.label3.Location = new System.Drawing.Point(15, 349);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(197, 95);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "성적이 떨어졌다고 \r\n좌절하지 마세요\r\n\r\n더 성장 할 기회라고 \r\n생각하세요!!\r\n";
             // 
             // iconButton3
             // 
@@ -139,7 +150,7 @@
             this.iconButton6.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.iconButton6.Size = new System.Drawing.Size(218, 60);
             this.iconButton6.TabIndex = 6;
-            this.iconButton6.Text = "지난학기 조회";
+            this.iconButton6.Text = "성적조회";
             this.iconButton6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton6.UseVisualStyleBackColor = true;
@@ -235,7 +246,7 @@
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(218, 81);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(857, 435);
+            this.panelDesktop.Size = new System.Drawing.Size(857, 460);
             this.panelDesktop.TabIndex = 4;
             this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
@@ -249,17 +260,6 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(213)))));
-            this.label3.Location = new System.Drawing.Point(15, 349);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(197, 95);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "성적이 떨어졌다고 \r\n좌절하지 마세요\r\n\r\n더 성장 할 기회라고 \r\n생각하세요!!\r\n";
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
@@ -268,7 +268,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1075, 516);
+            this.ClientSize = new System.Drawing.Size(1075, 541);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

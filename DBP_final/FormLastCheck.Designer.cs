@@ -30,12 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oPENDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cLASSPRODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lASTSEMESTERCOURSESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet11 = new DBP_final.DataSet1();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -50,6 +48,10 @@
             this.lASTSEMESTERCOURSESTableAdapter = new DBP_final.DataSet1TableAdapters.LASTSEMESTERCOURSESTableAdapter();
             this.cOURSEENROLLMENTCOUNTTableAdapter = new DBP_final.DataSet1TableAdapters.COURSEENROLLMENTCOUNTTableAdapter();
             this.coursesTableAdapter1 = new DBP_final.DataSet1TableAdapters.COURSESTableAdapter();
+            this.cIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oPENDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cLASSPRODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lASTSEMESTERCOURSESBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
@@ -75,10 +77,18 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(213)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeight = 28;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cIDDataGridViewTextBoxColumn,
@@ -86,44 +96,17 @@
             this.oPENDATEDataGridViewTextBoxColumn,
             this.cLASSPRODataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.lASTSEMESTERCOURSESBindingSource;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.Location = new System.Drawing.Point(13, 48);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(472, 214);
+            this.dataGridView1.Size = new System.Drawing.Size(452, 214);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // cIDDataGridViewTextBoxColumn
-            // 
-            this.cIDDataGridViewTextBoxColumn.DataPropertyName = "C_ID";
-            this.cIDDataGridViewTextBoxColumn.HeaderText = "과목번호";
-            this.cIDDataGridViewTextBoxColumn.Name = "cIDDataGridViewTextBoxColumn";
-            this.cIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cNAMEDataGridViewTextBoxColumn
-            // 
-            this.cNAMEDataGridViewTextBoxColumn.DataPropertyName = "C_NAME";
-            this.cNAMEDataGridViewTextBoxColumn.HeaderText = "과목명";
-            this.cNAMEDataGridViewTextBoxColumn.Name = "cNAMEDataGridViewTextBoxColumn";
-            this.cNAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // oPENDATEDataGridViewTextBoxColumn
-            // 
-            this.oPENDATEDataGridViewTextBoxColumn.DataPropertyName = "OPENDATE";
-            this.oPENDATEDataGridViewTextBoxColumn.HeaderText = "개설년도 및 학기";
-            this.oPENDATEDataGridViewTextBoxColumn.Name = "oPENDATEDataGridViewTextBoxColumn";
-            this.oPENDATEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.oPENDATEDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // cLASSPRODataGridViewTextBoxColumn
-            // 
-            this.cLASSPRODataGridViewTextBoxColumn.DataPropertyName = "CLASS_PRO";
-            this.cLASSPRODataGridViewTextBoxColumn.HeaderText = "담당교수";
-            this.cLASSPRODataGridViewTextBoxColumn.Name = "cLASSPRODataGridViewTextBoxColumn";
-            this.cLASSPRODataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // lASTSEMESTERCOURSESBindingSource
             // 
@@ -140,9 +123,17 @@
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(213)))));
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView2.ColumnHeadersHeight = 28;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.과목명DataGridViewTextBoxColumn,
@@ -152,8 +143,9 @@
             this.dataGridView2.Location = new System.Drawing.Point(545, 48);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(243, 336);
+            this.dataGridView2.Size = new System.Drawing.Size(201, 336);
             this.dataGridView2.TabIndex = 3;
             // 
             // 과목명DataGridViewTextBoxColumn
@@ -227,6 +219,35 @@
             // 
             this.coursesTableAdapter1.ClearBeforeFill = true;
             // 
+            // cIDDataGridViewTextBoxColumn
+            // 
+            this.cIDDataGridViewTextBoxColumn.DataPropertyName = "C_ID";
+            this.cIDDataGridViewTextBoxColumn.HeaderText = "과목번호";
+            this.cIDDataGridViewTextBoxColumn.Name = "cIDDataGridViewTextBoxColumn";
+            this.cIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cNAMEDataGridViewTextBoxColumn
+            // 
+            this.cNAMEDataGridViewTextBoxColumn.DataPropertyName = "C_NAME";
+            this.cNAMEDataGridViewTextBoxColumn.HeaderText = "과목명";
+            this.cNAMEDataGridViewTextBoxColumn.Name = "cNAMEDataGridViewTextBoxColumn";
+            this.cNAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // oPENDATEDataGridViewTextBoxColumn
+            // 
+            this.oPENDATEDataGridViewTextBoxColumn.DataPropertyName = "OPENDATE";
+            this.oPENDATEDataGridViewTextBoxColumn.HeaderText = "개설년도 및 학기";
+            this.oPENDATEDataGridViewTextBoxColumn.Name = "oPENDATEDataGridViewTextBoxColumn";
+            this.oPENDATEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.oPENDATEDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // cLASSPRODataGridViewTextBoxColumn
+            // 
+            this.cLASSPRODataGridViewTextBoxColumn.DataPropertyName = "CLASS_PRO";
+            this.cLASSPRODataGridViewTextBoxColumn.HeaderText = "담당교수";
+            this.cLASSPRODataGridViewTextBoxColumn.Name = "cLASSPRODataGridViewTextBoxColumn";
+            this.cLASSPRODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // FormLastCheck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -261,10 +282,6 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.BindingSource cOURSEENROLLMENTCOUNTBindingSource;
         private DataSet1TableAdapters.COURSEENROLLMENTCOUNTTableAdapter cOURSEENROLLMENTCOUNTTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oPENDATEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cLASSPRODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 과목명DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 신청인원수DataGridViewTextBoxColumn;
         private DataSet1TableAdapters.COURSESTableAdapter coursesTableAdapter1;
@@ -273,5 +290,9 @@
         private Oracle.ManagedDataAccess.Client.OracleCommand oracleCommand1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oPENDATEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cLASSPRODataGridViewTextBoxColumn;
     }
 }

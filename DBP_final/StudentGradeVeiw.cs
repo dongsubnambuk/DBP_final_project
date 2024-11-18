@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
@@ -85,37 +86,6 @@ namespace DBP_final
                             }
                         }
                     }
-                    else
-                    {
-                        // "전체" 선택 시 처리되지 않은 학기가 있는지 확인
-                        string checkAllQuery = @"SELECT C.OPENDATE
-                                         FROM ENROLL E 
-                                         JOIN COURSES C ON E.C_ID = C.C_ID 
-                                         WHERE E.S_ID = :studentId 
-                                         AND E.FINAL_GRADE IS NULL 
-                                         GROUP BY C.OPENDATE";
-
-                        using (OracleCommand checkAllCmd = new OracleCommand(checkAllQuery, conn))
-                        {
-                            checkAllCmd.Parameters.Add(new OracleParameter("studentId", studentId));
-                            OracleDataReader checkAllReader = checkAllCmd.ExecuteReader();
-
-                            List<string> pendingSemesters = new List<string>();
-
-                            while (checkAllReader.Read())
-                            {
-                                pendingSemesters.Add(checkAllReader["OPENDATE"].ToString());
-                            }
-
-                            if (pendingSemesters.Count > 0)
-                            {
-                                string pendingMessage = "성적 처리가 완료되지 않은 학기가 있습니다. 해당 학기로 조회해 주세요:\n" +
-                                                        string.Join(", ", pendingSemesters);
-                                MessageBox.Show(pendingMessage, "성적 처리 중", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                return;
-                            }
-                        }
-                    }
 
                     // 성적 조회 쿼리 작성
                     string query = detailed ?
@@ -148,13 +118,19 @@ namespace DBP_final
                         listBox1.Items.Add($"학번: {studentId}   학기: {semester}");
                         listBox1.Items.Add("=============================================================");
 
+                        // 성적 데이터 저장용 리스트
+                        List<double> gradePoints = new List<double>();
+
                         // 데이터 출력
                         if (detailed)
                         {
                             listBox1.Items.Add("과목 | 시험 | 출석 | 과제1 | 과제2 | 성적");
                             while (reader.Read())
                             {
-                                listBox1.Items.Add($"{reader["C_NAME"]} | {reader["EXAM_SCORE"]} | {reader["ATT_SCORE"]} | {reader["ASS_SCORE1"]} | {reader["ASS_SCORE2"]} | {reader["FINAL_GRADE"]}");
+                                string finalGrade = reader["FINAL_GRADE"]?.ToString() ?? "F";
+                                gradePoints.Add(ConvertGradeToPoint(finalGrade)); // 등급을 평점으로 변환
+
+                                listBox1.Items.Add($"{reader["C_NAME"]} | {reader["EXAM_SCORE"]} | {reader["ATT_SCORE"]} | {reader["ASS_SCORE1"]} | {reader["ASS_SCORE2"]} | {finalGrade}");
                             }
                         }
                         else
@@ -162,11 +138,17 @@ namespace DBP_final
                             listBox1.Items.Add("과목 | 성적");
                             while (reader.Read())
                             {
-                                listBox1.Items.Add($"{reader["C_NAME"]} | {reader["FINAL_GRADE"]}");
+                                string finalGrade = reader["FINAL_GRADE"]?.ToString() ?? "F";
+                                gradePoints.Add(ConvertGradeToPoint(finalGrade)); // 등급을 평점으로 변환
+
+                                listBox1.Items.Add($"{reader["C_NAME"]} | {finalGrade}");
                             }
                         }
 
+                        // 평균 평점 계산 및 출력
+                        double averageGrade = gradePoints.Any() ? gradePoints.Average() : 0.0;
                         listBox1.Items.Add("=============================================================");
+                        listBox1.Items.Add($"평균 평점: {averageGrade:F2}");
                     }
                 }
             }
@@ -175,6 +157,18 @@ namespace DBP_final
                 MessageBox.Show("성적 조회 실패: " + ex.Message);
             }
         }
+
+        // 등급을 평점으로 변환
+        private double ConvertGradeToPoint(string grade)
+        {
+            if (grade == "A") return 4.5;
+            if (grade == "B") return 3.5;
+            if (grade == "C") return 2.5;
+            if (grade == "D") return 1.5;
+            if (grade == "F") return 0.0;
+            return 0.0; // 예상하지 못한 값 처리
+        }
+
 
 
 

@@ -25,7 +25,9 @@ namespace DBP_final
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+    
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             // 텍스트 박스 값 가져오기
             string professorName = textBox1.Text.Trim();

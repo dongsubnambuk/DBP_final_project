@@ -33,8 +33,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataSet5 = new DBP_final.DataSet5();
+            this.cIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oPENDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cLASSPRONAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cLASSROOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cOURSES2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet5 = new DBP_final.DataSet5();
             this.cOURSES2TableAdapter = new DBP_final.DataSet5TableAdapters.COURSES2TableAdapter();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,14 +50,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.cIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oPENDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cLASSPRONAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cLASSROOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOURSES2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet5)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,15 +100,50 @@
             this.dataGridView1.Size = new System.Drawing.Size(503, 150);
             this.dataGridView1.TabIndex = 2;
             // 
-            // dataSet5
+            // cIDDataGridViewTextBoxColumn
             // 
-            this.dataSet5.DataSetName = "DataSet5";
-            this.dataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.cIDDataGridViewTextBoxColumn.DataPropertyName = "C_ID";
+            this.cIDDataGridViewTextBoxColumn.HeaderText = "과목코드";
+            this.cIDDataGridViewTextBoxColumn.Name = "cIDDataGridViewTextBoxColumn";
+            this.cIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cNAMEDataGridViewTextBoxColumn
+            // 
+            this.cNAMEDataGridViewTextBoxColumn.DataPropertyName = "C_NAME";
+            this.cNAMEDataGridViewTextBoxColumn.HeaderText = "과목명";
+            this.cNAMEDataGridViewTextBoxColumn.Name = "cNAMEDataGridViewTextBoxColumn";
+            this.cNAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // oPENDATEDataGridViewTextBoxColumn
+            // 
+            this.oPENDATEDataGridViewTextBoxColumn.DataPropertyName = "OPENDATE";
+            this.oPENDATEDataGridViewTextBoxColumn.HeaderText = "개설학기";
+            this.oPENDATEDataGridViewTextBoxColumn.Name = "oPENDATEDataGridViewTextBoxColumn";
+            this.oPENDATEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cLASSPRONAMEDataGridViewTextBoxColumn
+            // 
+            this.cLASSPRONAMEDataGridViewTextBoxColumn.DataPropertyName = "CLASS_PRO_NAME";
+            this.cLASSPRONAMEDataGridViewTextBoxColumn.HeaderText = "강의교수명";
+            this.cLASSPRONAMEDataGridViewTextBoxColumn.Name = "cLASSPRONAMEDataGridViewTextBoxColumn";
+            this.cLASSPRONAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cLASSROOMDataGridViewTextBoxColumn
+            // 
+            this.cLASSROOMDataGridViewTextBoxColumn.DataPropertyName = "CLASSROOM";
+            this.cLASSROOMDataGridViewTextBoxColumn.HeaderText = "강의실";
+            this.cLASSROOMDataGridViewTextBoxColumn.Name = "cLASSROOMDataGridViewTextBoxColumn";
+            this.cLASSROOMDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cOURSES2BindingSource
             // 
             this.cOURSES2BindingSource.DataMember = "COURSES2";
             this.cOURSES2BindingSource.DataSource = this.dataSet5;
+            // 
+            // dataSet5
+            // 
+            this.dataSet5.DataSetName = "DataSet5";
+            this.dataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cOURSES2TableAdapter
             // 
@@ -208,42 +243,7 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "조회하기";
             this.button1.UseVisualStyleBackColor = false;
-    
-            // 
-            // cIDDataGridViewTextBoxColumn
-            // 
-            this.cIDDataGridViewTextBoxColumn.DataPropertyName = "C_ID";
-            this.cIDDataGridViewTextBoxColumn.HeaderText = "과목코드";
-            this.cIDDataGridViewTextBoxColumn.Name = "cIDDataGridViewTextBoxColumn";
-            this.cIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cNAMEDataGridViewTextBoxColumn
-            // 
-            this.cNAMEDataGridViewTextBoxColumn.DataPropertyName = "C_NAME";
-            this.cNAMEDataGridViewTextBoxColumn.HeaderText = "과목명";
-            this.cNAMEDataGridViewTextBoxColumn.Name = "cNAMEDataGridViewTextBoxColumn";
-            this.cNAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // oPENDATEDataGridViewTextBoxColumn
-            // 
-            this.oPENDATEDataGridViewTextBoxColumn.DataPropertyName = "OPENDATE";
-            this.oPENDATEDataGridViewTextBoxColumn.HeaderText = "개설학기";
-            this.oPENDATEDataGridViewTextBoxColumn.Name = "oPENDATEDataGridViewTextBoxColumn";
-            this.oPENDATEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cLASSPRONAMEDataGridViewTextBoxColumn
-            // 
-            this.cLASSPRONAMEDataGridViewTextBoxColumn.DataPropertyName = "CLASS_PRO_NAME";
-            this.cLASSPRONAMEDataGridViewTextBoxColumn.HeaderText = "강의교수명";
-            this.cLASSPRONAMEDataGridViewTextBoxColumn.Name = "cLASSPRONAMEDataGridViewTextBoxColumn";
-            this.cLASSPRONAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cLASSROOMDataGridViewTextBoxColumn
-            // 
-            this.cLASSROOMDataGridViewTextBoxColumn.DataPropertyName = "CLASSROOM";
-            this.cLASSROOMDataGridViewTextBoxColumn.HeaderText = "강의실";
-            this.cLASSROOMDataGridViewTextBoxColumn.Name = "cLASSROOMDataGridViewTextBoxColumn";
-            this.cLASSROOMDataGridViewTextBoxColumn.ReadOnly = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // StudentClassView
             // 
@@ -258,8 +258,8 @@
             this.Text = "강의 시간표 조회";
             this.Load += new System.EventHandler(this.StudentClassView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOURSES2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet5)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
