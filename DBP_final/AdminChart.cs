@@ -1,5 +1,6 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -56,7 +57,7 @@ namespace DBP_final
         FROM DONG1.ENROLL E
         JOIN DONG1.COURSES C ON E.C_ID = C.C_ID
         GROUP BY C.OPENDATE, C.C_NAME
-        ORDER BY C.OPENDATE, C.C_NAME";
+        ORDER BY C.C_NAME, C.OPENDATE";
 
             using (OracleConnection conn = new OracleConnection(connectionString))
             {
@@ -65,34 +66,46 @@ namespace DBP_final
                 {
                     using (OracleDataReader reader = cmd.ExecuteReader())
                     {
+                        Dictionary<string, Dictionary<string, double>> data = new Dictionary<string, Dictionary<string, double>>();
+
                         while (reader.Read())
                         {
                             string semester = reader["OPENDATE"].ToString().Trim();
                             string courseName = reader["C_NAME"].ToString().Trim();
                             double avgGrade = reader["AVG_GRADE"] != DBNull.Value ? Convert.ToDouble(reader["AVG_GRADE"]) : 0.0;
 
-                            // 학기별 시리즈 확인 및 추가
-                            Series series = chart.Series.FindByName(semester);
-                            if (series == null)
-                            {
-                                // 새로운 학기 이름으로 시리즈 생성
-                                series = new Series(semester)
-                                {
-                                    ChartType = SeriesChartType.Bar // 막대형 차트
-                                };
-                                chart.Series.Add(series); // 차트에 시리즈 추가
-                            }
+                            // 데이터 저장
+                            if (!data.ContainsKey(courseName))
+                                data[courseName] = new Dictionary<string, double>();
 
-                            // 시리즈에 데이터 추가
-                            series.Points.AddXY(courseName, avgGrade);
+                            data[courseName][semester] = avgGrade;
 
                             // 리스트박스에 데이터 추가
                             listBox1.Items.Add($"{semester,-8} {courseName.PadRight(20)} {avgGrade:F2}");
                         }
 
+                        // 학기별 시리즈 생성 및 데이터 추가
+                        foreach (var semester in new[] { "2024-1", "2024-2" })
+                        {
+                            Series series = new Series(semester)
+                            {
+                                ChartType = SeriesChartType.Bar // 막대형 차트
+                            };
+                            chart.Series.Add(series);
+
+                            foreach (var course in data)
+                            {
+                                double grade = course.Value.ContainsKey(semester) ? course.Value[semester] : 0.0;
+                                series.Points.AddXY(course.Key, grade); // 과목명과 성적 추가
+                            }
+                        }
+
                         // 차트 설정
-                        chart.ChartAreas[0].AxisX.Interval = 1;
-                  
+                        chart.ChartAreas[0].AxisX.Interval = 1; // X축 간격
+                     
+                        chart.ChartAreas[0].AxisX.LabelStyle.IsStaggered = false; // 라벨 겹침 방지
+                        chart.ChartAreas[0].AxisX.LabelAutoFitStyle = LabelAutoFitStyles.DecreaseFont | LabelAutoFitStyles.WordWrap;
+
                         chart.Legends[0].Docking = Docking.Top; // 범례 위치 설정
                     }
                 }

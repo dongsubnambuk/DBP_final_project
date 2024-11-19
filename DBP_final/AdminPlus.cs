@@ -66,6 +66,7 @@ namespace DBP_final
         }
 
 
+        //강의 생성
         private void button1_Click(object sender, EventArgs e)
         {
             // 강의 개설
@@ -79,6 +80,8 @@ namespace DBP_final
             cOURSESTableAdapter.Update(dataSet1.COURSES);
             MessageBox.Show("강의 개설과 교수님 배정이 완료되었습니다. 강의실 배정해주세요.");
         }
+
+        //강의실 배정 버튼
 
         private void button2_Click_1(object sender, EventArgs e)
         {
