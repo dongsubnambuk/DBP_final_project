@@ -15,28 +15,33 @@ namespace DBP_final
 {
     public partial class Form1 : Form
     {
-
-    
         public Form1()
         {
             InitializeComponent();
-       
         }
 
-  
         private void Form1_Load(object sender, EventArgs e)
         {
             string conString = "USER ID =DONG1; PASSWORD=sds@258079;" +
-                "Data source = localhost:1521/xepdb1";
+                               "Data source = localhost:1521/xepdb1";
             oracleConnection1.ConnectionString = conString;
             oracleConnection1.Open();
 
             oracleCommand1.CommandText = oracleConnection1.ConnectionString;
             oracleCommand1.Connection = oracleConnection1;
-          
+
+            // 패스워드 입력란의 KeyDown 이벤트 핸들러 등록
+            textBox2.KeyDown += TextBox2_KeyDown;
         }
 
-
+        private void TextBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) // 엔터 키 감지
+            {
+                e.SuppressKeyPress = true; // 기본 엔터 동작(삑 소리 방지) 비활성화
+                button1_Click(sender, e); // 로그인 버튼 클릭 이벤트 호출
+            }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -117,10 +122,8 @@ namespace DBP_final
             }
         }
 
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -128,4 +131,5 @@ namespace DBP_final
             this.Close();
         }
     }
+
 }

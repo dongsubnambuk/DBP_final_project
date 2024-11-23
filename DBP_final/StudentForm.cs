@@ -16,6 +16,10 @@ namespace DBP_final
 {
     public partial class StudentForm : Form
     {
+        private List<string> notices = new List<string>(); // 공지사항 목록
+        private int currentNoticeIndex = 0; // 현재 표시 중인 공지사항 인덱스
+        private bool isLabelVisible = true; // 라벨 깜빡거림 상태
+
         private string studentId;
         private IconButton currentBtn;
         private Panel leftBorderBtn;
@@ -53,7 +57,7 @@ namespace DBP_final
             {
                 DisableButton();
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(255, 150, 150);
+                currentBtn.BackColor = Color.FromArgb(235, 245, 251);
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
@@ -77,7 +81,7 @@ namespace DBP_final
             if (currentBtn != null)
             {
 
-                currentBtn.BackColor = Color.FromArgb(255, 127, 127);
+                currentBtn.BackColor = Color.FromArgb(103, 153, 255);
                 currentBtn.ForeColor = Color.White;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = Color.White;
@@ -103,39 +107,20 @@ namespace DBP_final
             childForm.Show();
             lblTitleChildForm.Text = childForm.Text;
         }
-        private void iconButton6_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBcolors.color1);
-            OpenChildForm(new StudentGradeView(studentId));
-
-        }
-
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBcolors.color2);
-            OpenChildForm(new AdminPlus());
-        }
-
-        private void iconButton3_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBcolors.color3);
-            OpenChildForm(new AdminGradeInput());
-        }
-
-        private void iconButton4_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGBcolors.color4);
-            OpenChildForm(new AdminGradeReport());
-        }
+   
+     
 
 
         private void StudentForm_Load(object sender, EventArgs e)
         {
-          
             LoadStudentName();
-            timer1.Interval = 1000; //1초마다 깜빡임
-            timer1.Start();
+            LoadNoticesForLabel(); // 공지사항 목록 로드
+            timer1.Interval = 3000; // 3초 간격으로 변경
+            timer1.Start(); // 타이머 시작
         }
+
+
+
         private void btnHome_Click(object sender, EventArgs e)
         {
             currentChildForm.Close();
@@ -151,6 +136,8 @@ namespace DBP_final
             iconCurrentChildForm.IconColor = Color.MediumPurple;
             lblTitleChildForm.Text = "Students";
         }
+
+
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
@@ -191,10 +178,6 @@ namespace DBP_final
         }
 
 
-        private void iconButton4_Click_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
@@ -240,9 +223,109 @@ namespace DBP_final
             }
         }
 
+        private void LoadNoticesForLabel()
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection("User Id=DONG1; Password=sds@258079; Data Source=localhost:1521/xepdb1"))
+                {
+                    conn.Open();
+                    string query = "SELECT TITLE, CONTENT FROM NOTICES ORDER BY CREATED_AT DESC";
+
+                    using (OracleCommand cmd = new OracleCommand(query, conn))
+                    {
+                        using (OracleDataReader reader = cmd.ExecuteReader())
+                        {
+                            notices.Clear(); // 기존 공지사항 목록 초기화
+                            while (reader.Read())
+                            {
+                                string title = reader["TITLE"].ToString();
+                                string content = reader["CONTENT"].ToString();
+                                notices.Add($"[공지] {title}: {content}"); // 제목과 내용을 조합하여 저장
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"공지사항 로드 중 오류가 발생했습니다: {ex.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
-            label3.Visible=!label3.Visible;
+            if (notices.Count == 0)
+            {
+                label4.Text = "등록된 공지사항이 없습니다."; // 공지사항이 없을 경우
+                label4.Visible = isLabelVisible;
+                isLabelVisible = !isLabelVisible; // 깜빡거리게 하기
+                return;
+            }
+
+            // 현재 공지사항 표시
+            string noticeText = notices[currentNoticeIndex];
+
+            // 보이는 길이를 픽스하고 넘어가면 다음 줄로 넘어가도록 처리
+            int maxWidth = 300; // 라벨의 최대 가로 길이 (픽셀 단위로 설정)
+            int fontHeight = label4.Font.Height; // 한 줄의 높이 계산
+            List<string> wrappedText = WrapText(noticeText, label4.Font, maxWidth);
+
+            // 라벨에 텍스트 추가
+            label4.Text = string.Join("\n", wrappedText);
+            label4.Height = wrappedText.Count * fontHeight; // 라벨의 높이를 텍스트 줄 수에 맞춤
+
+            label4.Visible = true;
+
+            // 다음 공지사항으로 이동 (순환)
+            currentNoticeIndex = (currentNoticeIndex + 1) % notices.Count;
+            isLabelVisible = false; // 다음 단계에서 숨기도록 설정
+        }
+
+        // 텍스트 줄 바꿈 처리 함수
+        private List<string> WrapText(string text, Font font, int maxWidth)
+        {
+            List<string> lines = new List<string>();
+            string[] words = text.Split(' ');
+            string currentLine = "";
+
+            foreach (string word in words)
+            {
+                string testLine = string.IsNullOrEmpty(currentLine) ? word : $"{currentLine} {word}";
+                Size textSize = TextRenderer.MeasureText(testLine, font);
+
+                if (textSize.Width > maxWidth)
+                {
+                    if (!string.IsNullOrEmpty(currentLine))
+                    {
+                        lines.Add(currentLine);
+                        currentLine = word;
+                    }
+                    else
+                    {
+                        // 단어 자체가 너무 길 경우
+                        lines.Add(word);
+                        currentLine = "";
+                    }
+                }
+                else
+                {
+                    currentLine = testLine;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(currentLine))
+            {
+                lines.Add(currentLine);
+            }
+
+            return lines;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            currentChildForm.Close();
+            Reset();
         }
     }
 }

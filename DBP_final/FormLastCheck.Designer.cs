@@ -34,6 +34,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oPENDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cLASSPRODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lASTSEMESTERCOURSESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet11 = new DBP_final.DataSet1();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -48,10 +52,6 @@
             this.lASTSEMESTERCOURSESTableAdapter = new DBP_final.DataSet1TableAdapters.LASTSEMESTERCOURSESTableAdapter();
             this.cOURSEENROLLMENTCOUNTTableAdapter = new DBP_final.DataSet1TableAdapters.COURSEENROLLMENTCOUNTTableAdapter();
             this.coursesTableAdapter1 = new DBP_final.DataSet1TableAdapters.COURSESTableAdapter();
-            this.cIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oPENDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cLASSPRODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lASTSEMESTERCOURSESBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
@@ -77,12 +77,12 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(213)))));
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -108,6 +108,35 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // cIDDataGridViewTextBoxColumn
+            // 
+            this.cIDDataGridViewTextBoxColumn.DataPropertyName = "C_ID";
+            this.cIDDataGridViewTextBoxColumn.HeaderText = "과목번호";
+            this.cIDDataGridViewTextBoxColumn.Name = "cIDDataGridViewTextBoxColumn";
+            this.cIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cNAMEDataGridViewTextBoxColumn
+            // 
+            this.cNAMEDataGridViewTextBoxColumn.DataPropertyName = "C_NAME";
+            this.cNAMEDataGridViewTextBoxColumn.HeaderText = "과목명";
+            this.cNAMEDataGridViewTextBoxColumn.Name = "cNAMEDataGridViewTextBoxColumn";
+            this.cNAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // oPENDATEDataGridViewTextBoxColumn
+            // 
+            this.oPENDATEDataGridViewTextBoxColumn.DataPropertyName = "OPENDATE";
+            this.oPENDATEDataGridViewTextBoxColumn.HeaderText = "개설년도 및 학기";
+            this.oPENDATEDataGridViewTextBoxColumn.Name = "oPENDATEDataGridViewTextBoxColumn";
+            this.oPENDATEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.oPENDATEDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // cLASSPRODataGridViewTextBoxColumn
+            // 
+            this.cLASSPRODataGridViewTextBoxColumn.DataPropertyName = "CLASS_PRO";
+            this.cLASSPRODataGridViewTextBoxColumn.HeaderText = "담당교수";
+            this.cLASSPRODataGridViewTextBoxColumn.Name = "cLASSPRODataGridViewTextBoxColumn";
+            this.cLASSPRODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // lASTSEMESTERCOURSESBindingSource
             // 
             this.lASTSEMESTERCOURSESBindingSource.DataMember = "LASTSEMESTERCOURSES";
@@ -123,11 +152,11 @@
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(213)))));
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -219,40 +248,11 @@
             // 
             this.coursesTableAdapter1.ClearBeforeFill = true;
             // 
-            // cIDDataGridViewTextBoxColumn
-            // 
-            this.cIDDataGridViewTextBoxColumn.DataPropertyName = "C_ID";
-            this.cIDDataGridViewTextBoxColumn.HeaderText = "과목번호";
-            this.cIDDataGridViewTextBoxColumn.Name = "cIDDataGridViewTextBoxColumn";
-            this.cIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cNAMEDataGridViewTextBoxColumn
-            // 
-            this.cNAMEDataGridViewTextBoxColumn.DataPropertyName = "C_NAME";
-            this.cNAMEDataGridViewTextBoxColumn.HeaderText = "과목명";
-            this.cNAMEDataGridViewTextBoxColumn.Name = "cNAMEDataGridViewTextBoxColumn";
-            this.cNAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // oPENDATEDataGridViewTextBoxColumn
-            // 
-            this.oPENDATEDataGridViewTextBoxColumn.DataPropertyName = "OPENDATE";
-            this.oPENDATEDataGridViewTextBoxColumn.HeaderText = "개설년도 및 학기";
-            this.oPENDATEDataGridViewTextBoxColumn.Name = "oPENDATEDataGridViewTextBoxColumn";
-            this.oPENDATEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.oPENDATEDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // cLASSPRODataGridViewTextBoxColumn
-            // 
-            this.cLASSPRODataGridViewTextBoxColumn.DataPropertyName = "CLASS_PRO";
-            this.cLASSPRODataGridViewTextBoxColumn.HeaderText = "담당교수";
-            this.cLASSPRODataGridViewTextBoxColumn.Name = "cLASSPRODataGridViewTextBoxColumn";
-            this.cLASSPRODataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // FormLastCheck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(233)))), ((int)(((byte)(213)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(242)))), ((int)(((byte)(246)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

@@ -1,4 +1,5 @@
-﻿using Oracle.ManagedDataAccess.Client;
+﻿using FontAwesome.Sharp;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,10 +45,28 @@ namespace DBP_final
             }
             else
             {
-                timer1.Stop();
-                MessageBox.Show("50초가 경과했습니다!");
+                timer1.Stop(); // 타이머 중지
+
+                // 메시지 박스 표시
+                DialogResult result = MessageBox.Show(
+                    "50초가 경과하였습니다. 재접속 해주세요.",
+                    "시간 초과",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                // Reset() 호출
+                Reset();
+
             }
         }
+
+        private void Reset()
+        {
+            // 현재 폼 숨기기
+            this.Hide();
+        }
+
+
 
         private void UpdateTimerLabel()
         {

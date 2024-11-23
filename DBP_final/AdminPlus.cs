@@ -49,14 +49,14 @@ namespace DBP_final
                 DataView filteredView = new DataView(coursesTable)
                 {
                     RowFilter = "OPENDATE = '2024-2'",
-                     Sort = "C_ID " // C_ID 기준 내림차순 정렬
+                    Sort = "C_ID " // C_ID 기준 내림차순 정렬
                 };
 
                 // DataGridView3에 필터링된 데이터 바인딩
                 dataGridView3.AutoGenerateColumns = true;
                 dataGridView3.DataSource = filteredView;
 
-               
+
             }
             catch (Exception ex)
             {
@@ -119,6 +119,7 @@ namespace DBP_final
 
                 // 데이터 업데이트 및 DataGridView 새로 고침
                 this.cOURSESWITHPROFESSORNAMETableAdapter.Fill(this.dataSet2.COURSESWITHPROFESSORNAME);
+                this.cOURSES2TableAdapter.Fill(this.dataSet5.COURSES2);
             }
             catch (Exception ex)
             {
@@ -248,6 +249,8 @@ namespace DBP_final
             }
         }
 
+
+        //과목 수정
         private void button3_Click(object sender, EventArgs e)
         {
             string courseId = textBox10.Text.Trim(); // 과목코드
@@ -285,11 +288,11 @@ namespace DBP_final
 
                     // 강의실 배정이 없는 경우 과목 테이블(COURSES) 업데이트
                     string updateCoursesQuery = @"
-            UPDATE COURSES
-            SET C_NAME = :courseName,
-                OPENDATE = :openDate,
-                CLASS_PRO = :professorId
-            WHERE C_ID = :courseId";
+                        UPDATE COURSES
+                        SET C_NAME = :courseName,
+                        OPENDATE = :openDate,
+                        CLASS_PRO = :professorId
+                        WHERE C_ID = :courseId";
 
                     using (OracleCommand updateCoursesCmd = new OracleCommand(updateCoursesQuery, conn))
                     {
@@ -335,12 +338,12 @@ namespace DBP_final
 
                     // 과목 정보를 가져오는 SQL 쿼리
                     string query = @"
-            SELECT 
-                C.C_ID, 
-                C.C_NAME, 
-                C.OPENDATE, 
-                C.CLASS_PRO 
-            FROM COURSES C";
+                                SELECT 
+                                C.C_ID, 
+                                C.C_NAME, 
+                                C.OPENDATE, 
+                                C.CLASS_PRO 
+                                FROM COURSES C";
 
                     using (OracleDataAdapter adapter = new OracleDataAdapter(query, conn))
                     {
@@ -373,7 +376,7 @@ namespace DBP_final
             }
         }
 
-       
+
 
 
 
@@ -404,8 +407,106 @@ namespace DBP_final
             }
         }
 
-       
+        private void dataGridView3_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            // 유효한 행인지 확인
+            if (e.RowIndex >= 0)
+            {
+                // 열의 헤더 텍스트를 기반으로 "과목명" 열인지 확인
+                if (dataGridView3.Columns[e.ColumnIndex].HeaderText == "과목명")
+                {
+                    // 선택된 셀의 값을 가져옴
+                    string courseName = dataGridView3.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString();
 
-        
+                    if (!string.IsNullOrEmpty(courseName))
+                    {
+                        ShowCourseDetails(courseName); // 과목 상세 정보 표시
+                    }
+                    else
+                    {
+                        MessageBox.Show("선택한 셀에 유효한 과목명이 없습니다.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("해당 열은 '과목명' 열이 아닙니다.");
+                }
+            }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            string courseId = textBox10.Text.Trim(); // 과목코드
+            string courseName = textBox12.Text.Trim(); // 과목명
+            string openDate = textBox11.Text.Trim(); // 개설학기
+            string professorId = textBox9.Text.Trim(); // 강의 교수 ID
+
+            // 필수 입력값 체크
+            if (string.IsNullOrEmpty(courseId) || string.IsNullOrEmpty(courseName) ||
+                string.IsNullOrEmpty(openDate) || string.IsNullOrEmpty(professorId))
+            {
+                MessageBox.Show("모든 필드를 입력해야 수정할 수 있습니다.");
+                return;
+            }
+
+            try
+            {
+                using (OracleConnection conn = new OracleConnection("User Id=DONG1; Password=sds@258079; Data Source=localhost:1521/xepdb1"))
+                {
+                    conn.Open();
+
+                    // 강의실 배정 여부 확인
+                    string checkQuery = "SELECT COUNT(*) FROM CLASSES WHERE C_ID = :courseId";
+                    using (OracleCommand checkCmd = new OracleCommand(checkQuery, conn))
+                    {
+                        checkCmd.Parameters.Add(new OracleParameter("courseId", courseId));
+                        int assignedRooms = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                        if (assignedRooms > 0)
+                        {
+                            MessageBox.Show("해당 과목은 이미 강의실이 배정되어 수정이 불가능합니다.");
+                            return;
+                        }
+                    }
+
+                    // 강의실 배정이 없는 경우 과목 테이블(COURSES) 업데이트
+                    string updateCoursesQuery = @"
+                        UPDATE COURSES
+                        SET C_NAME = :courseName,
+                        OPENDATE = :openDate,
+                        CLASS_PRO = :professorId
+                        WHERE C_ID = :courseId";
+
+                    using (OracleCommand updateCoursesCmd = new OracleCommand(updateCoursesQuery, conn))
+                    {
+                        updateCoursesCmd.Parameters.Add(new OracleParameter("courseName", courseName));
+                        updateCoursesCmd.Parameters.Add(new OracleParameter("openDate", openDate));
+                        updateCoursesCmd.Parameters.Add(new OracleParameter("professorId", professorId));
+                        updateCoursesCmd.Parameters.Add(new OracleParameter("courseId", courseId));
+
+                        int rowsUpdated = updateCoursesCmd.ExecuteNonQuery();
+
+                        if (rowsUpdated > 0)
+                        {
+                            MessageBox.Show("과목 정보가 성공적으로 수정되었습니다.");
+                            RefreshCourseDataGrid(); // 데이터 그리드 뷰 새로 고침
+
+                            textBox10.Text = string.Empty; // 과목코드
+                            textBox12.Text = string.Empty; // 과목명
+                            textBox11.Text = string.Empty; // 개설학기
+                            textBox9.Text = string.Empty; // 강의 교수 ID
+                        }
+                        else
+                        {
+                            MessageBox.Show("수정된 정보가 없습니다.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("과목 정보 수정 중 오류가 발생했습니다: " + ex.Message);
+            }
+        }
     }
 }

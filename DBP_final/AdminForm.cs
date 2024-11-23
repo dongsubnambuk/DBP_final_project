@@ -54,12 +54,13 @@ namespace DBP_final
         }
         private struct RGBcolors
         {
-            public static Color color1 = Color.FromArgb(44, 62, 80);
-            public static Color color2 = Color.FromArgb(142, 140, 167);
-            public static Color color3 = Color.FromArgb(52, 73, 94);
-            public static Color color4 = Color.FromArgb(133, 173, 205);
-            public static Color color5 = Color.FromArgb(171, 196, 171);
-            public static Color color6 = Color.FromArgb(130, 158, 158);
+            public static Color color1 = Color.FromArgb(40, 60, 90);    // 진한 네이비 블루 계열로 조정
+            public static Color color2 = Color.FromArgb(150, 160, 200); // 부드러운 회보라 톤으로 조정
+            public static Color color3 = Color.FromArgb(50, 80, 120);   // 짙은 블루-그레이 계열로 변경
+            public static Color color4 = Color.FromArgb(120, 170, 240); // 기존보다 파란 계열을 강조한 연한 블루
+            public static Color color5 = Color.FromArgb(180, 210, 180); // 밝은 올리브 톤으로 변경
+            public static Color color6 = Color.FromArgb(140, 180, 180); // 민트-그레이 계열로 밝게 조정
+
         }
 
         private void ActivateButton(object senderBtn, Color color)
@@ -68,7 +69,7 @@ namespace DBP_final
             {
                 DisableButton();
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(255, 150, 150);
+                currentBtn.BackColor = Color.FromArgb(235, 245, 251);
                 currentBtn.ForeColor = color;
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
                 currentBtn.IconColor = color;
@@ -92,10 +93,12 @@ namespace DBP_final
             if (currentBtn != null)
             {
 
-                currentBtn.BackColor = Color.FromArgb(255, 127, 127);
-                currentBtn.ForeColor = Color.White;
+                currentBtn.BackColor = Color.FromArgb(103, 153, 255);
+                currentBtn.ForeColor = Color.FromArgb(245, 247, 250);
+
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
-                currentBtn.IconColor = Color.White;
+                currentBtn.ForeColor = Color.FromArgb(245, 247, 250);
+
                 currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
@@ -243,6 +246,10 @@ namespace DBP_final
             this.Close(); // 현재 창 닫기
         }
 
-
+        private void iconButton7_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBcolors.color6);
+            OpenChildForm(new AdminNotice());
+        }
     }
 }
